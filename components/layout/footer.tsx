@@ -23,10 +23,9 @@ export function Footer() {
       <div className="container-1200 space-y-10">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="space-y-3">
-            <p className="font-heading text-2xl text-text">
-              ColorPagePrints
-              <span className="text-cta">·</span>
-            </p>
+            <Link href="/" className="inline-flex items-center" aria-label="ColorPagePrints home">
+              <img src="/images/logo-primary.png" alt="ColorPagePrints" className="h-6 w-auto md:h-8" />
+            </Link>
             <p className="text-sm text-text-muted">Premium coloring books and printable pages.</p>
           </div>
 

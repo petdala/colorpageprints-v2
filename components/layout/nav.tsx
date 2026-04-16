@@ -23,9 +23,8 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-40 h-16 border-b border-border bg-background">
       <div className="container-1200 flex h-full items-center justify-between">
-        <Link href="/" className="font-heading text-2xl text-text" aria-label="ColorPagePrints home">
-          ColorPagePrints
-          <span className="text-cta">·</span>
+        <Link href="/" className="inline-flex items-center" aria-label="ColorPagePrints home">
+          <img src="/images/logo-primary.png" alt="ColorPagePrints" className="h-6 w-auto md:h-8" />
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">
