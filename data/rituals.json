@@ -10,6 +10,61 @@
     "journal_pdf_url": "/downloads/ritual/soft-hours-prompts.pdf",
     "palette_pdf_url": "/downloads/ritual/self-care-palettes.pdf",
     "ritual_guide_pdf_url": "/downloads/ritual/self-care-ritual-guide.pdf",
-    "related_ritual_slugs": ["mushroom-cottagecore", "stained-glass", "cats-cozy-scenes"]
+    "related_ritual_slugs": [
+      "mushroom-cottagecore",
+      "stained-glass",
+      "cats-cozy-scenes"
+    ]
+  },
+  {
+    "slug": "mushroom-cottagecore",
+    "book_sku": "CPP-A1-017",
+    "bundle_name": "Mushroom Cottagecore",
+    "playlist_spotify_uri": "spotify:playlist:placeholder",
+    "meditation_title": "Ground Into Calm",
+    "meditation_duration": "10 min",
+    "meditation_file_url": "/downloads/ritual/mushroom-cottagecore-meditation.mp3",
+    "journal_pdf_url": "/downloads/ritual/mushroom-cottagecore-prompts.pdf",
+    "palette_pdf_url": "/downloads/ritual/mushroom-cottagecore-palettes.pdf",
+    "ritual_guide_pdf_url": "/downloads/ritual/mushroom-cottagecore-guide.pdf",
+    "related_ritual_slugs": [
+      "cozy-girl-self-care",
+      "stained-glass",
+      "cats-cozy-scenes"
+    ]
+  },
+  {
+    "slug": "stained-glass",
+    "book_sku": "CPP-A1-017",
+    "bundle_name": "Stained Glass",
+    "playlist_spotify_uri": "spotify:playlist:placeholder",
+    "meditation_title": "Color and Light",
+    "meditation_duration": "10 min",
+    "meditation_file_url": "/downloads/ritual/stained-glass-meditation.mp3",
+    "journal_pdf_url": "/downloads/ritual/stained-glass-prompts.pdf",
+    "palette_pdf_url": "/downloads/ritual/stained-glass-palettes.pdf",
+    "ritual_guide_pdf_url": "/downloads/ritual/stained-glass-guide.pdf",
+    "related_ritual_slugs": [
+      "cozy-girl-self-care",
+      "mushroom-cottagecore",
+      "cats-cozy-scenes"
+    ]
+  },
+  {
+    "slug": "cats-cozy-scenes",
+    "book_sku": "CPP-A1-017",
+    "bundle_name": "Cats Cozy Scenes",
+    "playlist_spotify_uri": "spotify:playlist:placeholder",
+    "meditation_title": "Purring Peace",
+    "meditation_duration": "10 min",
+    "meditation_file_url": "/downloads/ritual/cats-cozy-scenes-meditation.mp3",
+    "journal_pdf_url": "/downloads/ritual/cats-cozy-scenes-prompts.pdf",
+    "palette_pdf_url": "/downloads/ritual/cats-cozy-scenes-palettes.pdf",
+    "ritual_guide_pdf_url": "/downloads/ritual/cats-cozy-scenes-guide.pdf",
+    "related_ritual_slugs": [
+      "cozy-girl-self-care",
+      "mushroom-cottagecore",
+      "stained-glass"
+    ]
   }
 ]
