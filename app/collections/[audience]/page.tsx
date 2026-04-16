@@ -118,7 +118,7 @@ export default function CollectionAudiencePage({ params }: CollectionAudiencePag
         <Breadcrumbs
           items={[
             { label: "Home", href: "/" },
-            { label: "Collections", href: "/collections/kids" },
+            { label: "Collections", href: "/shop" },
             { label: collection.title, href: `/collections/${collection.audience}` }
           ]}
         />
