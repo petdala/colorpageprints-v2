@@ -8,7 +8,6 @@ import { BookCard } from "@/components/ui/BookCard";
 import { FilterChips } from "@/components/ui/FilterChips";
 import type { BlogPost, Book } from "@/lib/types";
 
-const tabOptions = ["All", "Behind the Book", "Coloring Guides", "Classroom Ideas", "Mindful Coloring", "Screen-Free Fun"];
 
 type BlogIndexClientProps = {
   posts: BlogPost[];
@@ -17,6 +16,8 @@ type BlogIndexClientProps = {
 
 export function BlogIndexClient({ posts, books }: BlogIndexClientProps) {
   const [activeTab, setActiveTab] = useState("All");
+
+  const tabOptions = useMemo(() => ["All", ...Array.from(new Set(posts.map((post) => post.category)))], [posts]);
 
   const filteredPosts = useMemo(() => {
     if (activeTab === "All") {
