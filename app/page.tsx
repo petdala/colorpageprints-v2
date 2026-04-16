@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BookCard } from "@/components/ui/BookCard";
 import { EmailCapture } from "@/components/sections/EmailCapture";
-import { getBooks } from "@/lib/data";
+import { getBlogPosts, getBooks } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Premium Coloring Books & Free Printable Pages",
@@ -11,23 +11,6 @@ export const metadata: Metadata = {
     "Discover beautifully crafted coloring books for kids and adults. Browse our collections, try free sample pages, and shop on Amazon."
 };
 
-const studioPosts = [
-  {
-    slug: "building-happy-town-world",
-    title: "Building the World of Happy Town",
-    excerpt: "A behind-the-scenes look at character design, line-weight choices, and preschool usability tests."
-  },
-  {
-    slug: "color-rituals-for-busy-parents",
-    title: "5-Minute Color Rituals for Busy Parents",
-    excerpt: "Simple routines that fit real schedules while creating calm, focused moments with your kids."
-  },
-  {
-    slug: "how-we-design-free-pages",
-    title: "How We Design Printable Free Pages",
-    excerpt: "Our process for making pages printer-friendly, beginner-safe, and genuinely fun to complete."
-  }
-];
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -40,6 +23,9 @@ const organizationSchema = {
 
 export default function HomePage() {
   const featuredBooks = [...getBooks()].sort((a, b) => a.priority - b.priority).slice(0, 6);
+  const studioPosts = [...getBlogPosts()]
+    .sort((a, b) => (a.date > b.date ? -1 : 1))
+    .slice(0, 3);
 
   return (
     <div className="space-y-20 pb-8">
