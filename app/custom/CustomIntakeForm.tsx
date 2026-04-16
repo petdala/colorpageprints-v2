@@ -9,10 +9,10 @@ type FormState = {
   purpose: string;
   recipient: string;
   feeling: string;
-  visualTheme: string;
-  musicStyle: string;
+  theme: string;
+  music_style: string;
   deadline: string;
-  extraDetails: string;
+  details: string;
 };
 
 const initialState: FormState = {
@@ -21,10 +21,10 @@ const initialState: FormState = {
   purpose: "",
   recipient: "",
   feeling: "",
-  visualTheme: "",
-  musicStyle: "",
+  theme: "",
+  music_style: "",
   deadline: "",
-  extraDetails: ""
+  details: ""
 };
 
 export function CustomIntakeForm() {
@@ -123,8 +123,8 @@ export function CustomIntakeForm() {
           <span>Preferred visual theme</span>
           <input
             type="text"
-            value={form.visualTheme}
-            onChange={(event) => setField("visualTheme", event.target.value)}
+            value={form.theme}
+            onChange={(event) => setField("theme", event.target.value)}
             required
             className="min-h-12 w-full rounded-sm border border-border px-4 py-2.5"
           />
@@ -134,8 +134,8 @@ export function CustomIntakeForm() {
           <span>Preferred music style</span>
           <input
             type="text"
-            value={form.musicStyle}
-            onChange={(event) => setField("musicStyle", event.target.value)}
+            value={form.music_style}
+            onChange={(event) => setField("music_style", event.target.value)}
             required
             className="min-h-12 w-full rounded-sm border border-border px-4 py-2.5"
           />
@@ -155,8 +155,8 @@ export function CustomIntakeForm() {
       <label className="space-y-1 text-sm text-text">
         <span>Extra details (optional)</span>
         <textarea
-          value={form.extraDetails}
-          onChange={(event) => setField("extraDetails", event.target.value)}
+          value={form.details}
+          onChange={(event) => setField("details", event.target.value)}
           className="min-h-24 w-full rounded-sm border border-border px-4 py-2.5"
         />
       </label>
