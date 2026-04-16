@@ -17,7 +17,8 @@ export function Nav() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  const hideShopCta = pathname.startsWith("/shop");
+  const normalizedPathname = pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
+  const hideShopCta = normalizedPathname === "/shop";
 
   return (
     <header className="sticky top-0 z-40 h-16 border-b border-border bg-background">
