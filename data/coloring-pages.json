@@ -30,5 +30,37 @@
       {"q": "What paper should I use?", "a": "Standard printer paper works, but cardstock is great for markers."}
     ],
     "related_page_slugs": ["community-helpers-firefighter"]
+  },
+  {
+    "slug": "self-care-bath-scene",
+    "title": "Self-Care Bath Scene",
+    "category": "kids",
+    "difficulty": "Medium",
+    "age_range": "Adults",
+    "parent_book_sku": "CPP-A1-017",
+    "preview_image": "/images/pages/self-care-bath-scene.jpg",
+    "pdf_download_url": "/downloads/pages/self-care-bath-scene.pdf",
+    "alt_text": "Free printable cozy bath self-care coloring page",
+    "faq": [
+      {"q": "Who is this page designed for?", "a": "This sample page is designed for adult colorists who enjoy cozy themes."},
+      {"q": "Can I use markers?", "a": "Yes. Use a backing sheet if your markers bleed."}
+    ],
+    "related_page_slugs": ["self-care-reading-nook"]
+  },
+  {
+    "slug": "self-care-reading-nook",
+    "title": "Self-Care Reading Nook",
+    "category": "kids",
+    "difficulty": "Medium",
+    "age_range": "Adults",
+    "parent_book_sku": "CPP-A1-017",
+    "preview_image": "/images/pages/self-care-reading-nook.jpg",
+    "pdf_download_url": "/downloads/pages/self-care-reading-nook.pdf",
+    "alt_text": "Free printable cozy reading nook coloring page",
+    "faq": [
+      {"q": "Is this from the Cozy Girl book?", "a": "Yes, this page is a free sample from Cozy Girl Self-Care Coloring Book."},
+      {"q": "What paper size should I print?", "a": "Print on standard US Letter (8.5x11) paper."}
+    ],
+    "related_page_slugs": ["self-care-bath-scene"]
   }
 ]
