@@ -1,30 +1,67 @@
-import { ButtonHTMLAttributes, forwardRef } from "react";
+import Link from "next/link";
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
 type ButtonVariant = "primary" | "secondary";
+type ButtonSize = "sm" | "md" | "lg";
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type SharedProps = {
   variant?: ButtonVariant;
+  size?: ButtonSize;
+  href?: string;
+  className?: string;
+  children: React.ReactNode;
 };
+
+type Props = SharedProps & ButtonHTMLAttributes<HTMLButtonElement> & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary: "bg-cta text-white hover:bg-cta-hover active:bg-cta-pressed",
-  secondary: "bg-surface-alt text-text border border-border hover:bg-card"
+  secondary: "border border-text bg-transparent text-text hover:bg-text hover:text-white"
 };
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
-  { className, variant = "primary", ...props },
-  ref
-) {
-  return (
-    <button
-      ref={ref}
-      className={cn(
-        "inline-flex items-center justify-center rounded-xl px-5 py-2.5 text-sm font-medium transition-colors disabled:bg-disabled disabled:text-text-light",
-        variantStyles[variant],
-        className
-      )}
-      {...props}
-    />
+const sizeStyles: Record<ButtonSize, string> = {
+  sm: "px-4 text-sm",
+  md: "px-6 text-sm",
+  lg: "px-7 text-base"
+};
+
+export function Button({
+  variant = "primary",
+  size = "md",
+  href,
+  className,
+  children,
+  ...props
+}: Props) {
+  const classes = cn(
+    "inline-flex min-h-12 items-center justify-center rounded-sm py-2.5 font-medium transition-colors",
+    variantStyles[variant],
+    sizeStyles[size],
+    className
   );
-});
+
+  if (href) {
+    const isExternal = href.startsWith("http");
+
+    if (isExternal) {
+      return (
+        <a href={href} className={classes} {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}>
+          {children}
+        </a>
+      );
+    }
+
+    return (
+      <Link href={href} className={classes}>
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <button className={classes} {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}>
+      {children}
+    </button>
+  );
+}
