@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-background text-text font-body antialiased;
+}
+
+@layer utilities {
+  .container-1200 {
+    @apply mx-auto w-full px-4;
+    max-width: 1200px;
+  }
+}

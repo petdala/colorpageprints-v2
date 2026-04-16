@@ -1,0 +1,14 @@
+[
+  {
+    "id": "moss-loop",
+    "title": "Moss Loop",
+    "price": 19.0,
+    "slug": "moss-loop"
+  },
+  {
+    "id": "night-bloom",
+    "title": "Night Bloom",
+    "price": 24.0,
+    "slug": "night-bloom"
+  }
+]

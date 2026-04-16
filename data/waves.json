@@ -1,0 +1,14 @@
+[
+  {
+    "id": "wave-1",
+    "title": "Wave 1",
+    "slug": "wave-1",
+    "status": "live"
+  },
+  {
+    "id": "wave-2",
+    "title": "Wave 2",
+    "slug": "wave-2",
+    "status": "planned"
+  }
+]

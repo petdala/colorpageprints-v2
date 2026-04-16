@@ -1,0 +1,12 @@
+[
+  {
+    "id": "starter-pack",
+    "title": "Starter Pack",
+    "audience": "beginners"
+  },
+  {
+    "id": "focus-pack",
+    "title": "Focus Pack",
+    "audience": "professionals"
+  }
+]
