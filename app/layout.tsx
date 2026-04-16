@@ -20,6 +20,7 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.colorpageprints.com"),
   title: {
     default: "ColorPagePrints | Premium Coloring Books & Free Printable Pages",
     template: "%s | ColorPagePrints"
