@@ -34,7 +34,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "ColorPagePrints",
   url: "https://www.colorpageprints.com",
-  logo: "https://www.colorpageprints.com/images/logo.png",
+  logo: "https://www.colorpageprints.com/images/logo-primary.png",
   sameAs: []
 };
 
