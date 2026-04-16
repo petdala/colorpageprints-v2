@@ -1,8 +1,8 @@
 export default function TermsPage() {
   return (
-    <section className="space-y-3">
-      <h1 className="font-heading text-4xl">Terms of Service</h1>
-      <p className="text-text-muted">Terms and conditions for using this site.</p>
-    </section>
+    <div className="mx-auto max-w-3xl font-body text-base leading-relaxed text-text">
+      <h1 className="mb-4 font-heading text-3xl">Terms of Service</h1>
+      <p>Terms of service content will be added here.</p>
+    </div>
   );
 }

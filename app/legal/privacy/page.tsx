@@ -1,8 +1,8 @@
 export default function PrivacyPage() {
   return (
-    <section className="space-y-3">
-      <h1 className="font-heading text-4xl">Privacy Policy</h1>
-      <p className="text-text-muted">How we collect and use information.</p>
-    </section>
+    <div className="mx-auto max-w-3xl font-body text-base leading-relaxed text-text">
+      <h1 className="mb-4 font-heading text-3xl">Privacy Policy</h1>
+      <p>Privacy policy content will be added here.</p>
+    </div>
   );
 }
