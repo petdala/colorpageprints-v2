@@ -24,7 +24,15 @@ export const metadata: Metadata = {
     default: "ColorPagePrints | Premium Coloring Books & Free Printable Pages",
     template: "%s | ColorPagePrints"
   },
-  description: "ColorPagePrints storefront and content hub"
+  description: "ColorPagePrints storefront and content hub",
+  openGraph: {
+    siteName: "ColorPagePrints",
+    images: ["/images/og-default.png"]
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/og-default.png"]
+  }
 };
 
 export default function RootLayout({
@@ -35,12 +43,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${dmSerifDisplay.variable}`}>
       <head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
-        <Script id="ga4-placeholder" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');`}
+        {/* TODO: Replace G-XXXXXXXXXX with real GA4 Measurement ID */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');`}
+        </Script>
+
+        {/* TODO: Replace this Meta Pixel placeholder with real Pixel ID and events */}
+        <Script id="meta-pixel-placeholder" strategy="afterInteractive">
+          {`window.fbq = window.fbq || function(){(window.fbq.q = window.fbq.q || []).push(arguments);};`}
         </Script>
       </head>
       <body>

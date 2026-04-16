@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { StarRating } from "@/components/ui/StarRating";
+import { trackEvent } from "@/lib/analytics";
 import type { Book } from "@/lib/types";
 
 type BookCardProps = {
@@ -37,7 +40,13 @@ export function BookCard({ book }: BookCardProps) {
 
         <p className="text-lg font-bold text-text">${book.price.toFixed(2)}</p>
 
-        <Button href={amazonUrl} target="_blank" rel="noreferrer" className="w-full">
+        <Button
+          href={amazonUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="w-full"
+          onClick={() => trackEvent("amazon_click", { sku: book.sku, source: "book_card" })}
+        >
           Buy on Amazon ↗
         </Button>
 

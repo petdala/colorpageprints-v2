@@ -6,6 +6,7 @@ import { FormEvent, useEffect, useState } from "react";
 import { EmailCapture } from "@/components/sections/EmailCapture";
 import { BookCard } from "@/components/ui/BookCard";
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics";
 import type { Book, Ritual } from "@/lib/types";
 
 type RitualBundleClientProps = {
@@ -53,6 +54,7 @@ export function RitualBundleClient({ ritual, book, relatedBooks }: RitualBundleC
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, tag: `ritual-${ritual.slug}` })
       });
+      trackEvent("ritual_unlock", { slug: ritual.slug });
       setUnlocked(true);
     } finally {
       setLoading(false);

@@ -2,6 +2,7 @@
 
 import { FormEvent, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics";
 import type { Book, Wave } from "@/lib/types";
 
 type LaunchWaveClientProps = {
@@ -47,6 +48,7 @@ export function LaunchWaveClient({ wave, books }: LaunchWaveClientProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, tag: `launch-wave-${wave.wave_number}` })
       });
+      trackEvent("launch_list_signup", { wave: String(wave.wave_number) });
       setJoined(true);
     } finally {
       setJoinLoading(false);
@@ -127,7 +129,11 @@ export function LaunchWaveClient({ wave, books }: LaunchWaveClientProps) {
               <h2 className="font-heading text-xl text-text">{book.title}</h2>
               <p className="text-sm font-medium text-text">${book.price.toFixed(2)}</p>
               <p className="text-sm text-text-muted">{firstSentence}</p>
-              {isLive ? <Button href={amazonUrl}>Buy on Amazon →</Button> : null}
+              {isLive ? (
+                <Button href={amazonUrl} onClick={() => trackEvent("amazon_click", { sku: book.sku, source: "launch_wave" })}>
+                  Buy on Amazon →
+                </Button>
+              ) : null}
             </article>
           );
         })}

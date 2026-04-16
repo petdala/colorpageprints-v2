@@ -42,7 +42,7 @@ export function Button({
   );
 
   if (href) {
-    const isExternal = href.startsWith("http");
+    const isExternal = href.startsWith("http") || href.endsWith(".pdf") || href.endsWith(".mp3");
 
     if (isExternal) {
       return (

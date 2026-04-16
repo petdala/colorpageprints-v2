@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics";
 
 type DownloadGateProps = {
   slug: string;
@@ -40,6 +41,7 @@ export function DownloadGate({ slug, pdfDownloadUrl }: DownloadGateProps) {
         })
       });
 
+      trackEvent("free_download", { slug, action: "unlock" });
       setHasEmail(true);
     } finally {
       setIsSubmitting(false);
@@ -48,7 +50,7 @@ export function DownloadGate({ slug, pdfDownloadUrl }: DownloadGateProps) {
 
   if (hasEmail) {
     return (
-      <Button href={pdfDownloadUrl} className="w-full sm:w-auto">
+      <Button href={pdfDownloadUrl} className="w-full sm:w-auto" onClick={() => trackEvent("free_download", { slug, action: "click" })}>
         Download Free Page →
       </Button>
     );

@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics";
 
 type EmailCaptureProps = {
   heading: string;
@@ -32,6 +33,7 @@ export function EmailCapture({ heading, subtext, buttonText, tag }: EmailCapture
         throw new Error("Failed to subscribe");
       }
 
+      trackEvent("email_signup", { tag });
       setStatus("success");
       setEmail("");
     } catch (error) {
