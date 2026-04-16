@@ -1,12 +1,15 @@
 [
   {
-    "id": "morning-reset",
-    "title": "Morning Reset",
-    "slug": "morning-reset"
-  },
-  {
-    "id": "night-winddown",
-    "title": "Night Winddown",
-    "slug": "night-winddown"
+    "slug": "cozy-girl-self-care",
+    "book_sku": "CPP-A1-017",
+    "bundle_name": "Soft Hours",
+    "playlist_spotify_uri": "spotify:playlist:placeholder",
+    "meditation_title": "Permission to Rest",
+    "meditation_duration": "10 min",
+    "meditation_file_url": "/downloads/ritual/permission-to-rest.mp3",
+    "journal_pdf_url": "/downloads/ritual/soft-hours-prompts.pdf",
+    "palette_pdf_url": "/downloads/ritual/self-care-palettes.pdf",
+    "ritual_guide_pdf_url": "/downloads/ritual/self-care-ritual-guide.pdf",
+    "related_ritual_slugs": ["mushroom-cottagecore", "stained-glass", "cats-cozy-scenes"]
   }
 ]

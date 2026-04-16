@@ -1,14 +1,63 @@
 [
   {
-    "id": "moss-loop",
-    "title": "Moss Loop",
-    "price": 19.0,
-    "slug": "moss-loop"
+    "sku": "CPP-HT-001",
+    "title": "Happy Town: Community Helpers",
+    "subtitle": "Preschool Activity & Coloring Book",
+    "slug": "happy-town-community-helpers",
+    "series": "Happy Town Series",
+    "series_slug": "happy-town",
+    "price": 9.99,
+    "page_count": 48,
+    "age_range": "Ages 3-5",
+    "lane": "Evergreen Kids",
+    "template": "HT1",
+    "amazon_asin": "TBD",
+    "cover_image": "/images/covers/cpp-ht-001.jpg",
+    "interior_previews": [],
+    "free_sample_slugs": ["community-helpers-firefighter", "community-helpers-doctor"],
+    "amazon_reviews": [
+      {
+        "stars": 5,
+        "text": "My daughter loves the characters! The activities are perfect for her age.",
+        "author": "Parent in Texas"
+      },
+      {
+        "stars": 5,
+        "text": "Great quality coloring pages. My preschooler asks for this book every day.",
+        "author": "Amazon Customer"
+      }
+    ],
+    "description": "Meet Blaze the firefighter bear, Rosie the doctor rabbit, Chase the police dog, and Frankie the mail carrier fox — four lovable friends who keep Happy Town running! This 48-page activity and coloring book is designed specifically for ages 3-5, with simple coloring pages, matching games, tracing activities, and find-and-color challenges. Single-sided printing means no bleed-through, and every page is built to engage little hands and big imaginations.",
+    "keywords": ["community helper coloring book", "preschool activity book ages 3-5"],
+    "related_skus": ["CPP-HT-002", "CPP-HT-003"],
+    "launch_date": "2026-04-20",
+    "priority": 0,
+    "has_ritual_bundle": false,
+    "ritual_bundle_slug": null
   },
   {
-    "id": "night-bloom",
-    "title": "Night Bloom",
-    "price": 24.0,
-    "slug": "night-bloom"
+    "sku": "CPP-A1-017",
+    "title": "Cozy Girl Self-Care Coloring Book",
+    "subtitle": "96 Pages of Relaxation & Creative Mindfulness",
+    "slug": "cozy-girl-self-care",
+    "series": "ColorPagePrints Cozy Collection",
+    "series_slug": "cozy-collection",
+    "price": 13.99,
+    "page_count": 96,
+    "age_range": "Adults",
+    "lane": "Premium Cozy / Adult",
+    "template": "A1",
+    "amazon_asin": "TBD",
+    "cover_image": "/images/covers/cpp-a1-017.jpg",
+    "interior_previews": [],
+    "free_sample_slugs": ["self-care-bath-scene", "self-care-reading-nook"],
+    "amazon_reviews": [],
+    "description": "Your coloring ritual starts here. 96 single-sided pages of bath scenes, candle-lit evenings, reading nooks, coffee mornings, and skincare moments — designed for adults who want to turn 20 minutes of coloring into a genuine self-care practice. Includes a QR code to unlock your Ritual Bundle: a curated Spotify playlist, guided meditation, journaling prompts, and color palette card.",
+    "keywords": ["self care coloring book", "cozy coloring book for adults"],
+    "related_skus": ["CPP-A1-016", "CPP-A1-018", "CPP-A1-019"],
+    "launch_date": "2026-08-15",
+    "priority": 18,
+    "has_ritual_bundle": true,
+    "ritual_bundle_slug": "cozy-girl-self-care"
   }
 ]

@@ -1,14 +1,34 @@
 [
   {
-    "id": "forest-owl",
-    "title": "Forest Owl",
-    "category": "nature",
-    "slug": "forest-owl"
+    "slug": "community-helpers-firefighter",
+    "title": "Blaze the Firefighter",
+    "category": "kids",
+    "difficulty": "Easy",
+    "age_range": "Ages 3-5",
+    "parent_book_sku": "CPP-HT-001",
+    "preview_image": "/images/pages/blaze-firefighter.jpg",
+    "pdf_download_url": "/downloads/pages/blaze-firefighter.pdf",
+    "alt_text": "Free printable firefighter bear coloring page for preschoolers",
+    "faq": [
+      {"q": "What age is this for?", "a": "Designed for ages 3-5 with bold, simple lines."},
+      {"q": "How do I print this?", "a": "Download the PDF and print on standard 8.5x11 paper."}
+    ],
+    "related_page_slugs": ["community-helpers-doctor"]
   },
   {
-    "id": "moon-garden",
-    "title": "Moon Garden",
-    "category": "fantasy",
-    "slug": "moon-garden"
+    "slug": "community-helpers-doctor",
+    "title": "Rosie the Doctor",
+    "category": "kids",
+    "difficulty": "Easy",
+    "age_range": "Ages 3-5",
+    "parent_book_sku": "CPP-HT-001",
+    "preview_image": "/images/pages/rosie-doctor.jpg",
+    "pdf_download_url": "/downloads/pages/rosie-doctor.pdf",
+    "alt_text": "Free printable doctor rabbit coloring page for preschoolers",
+    "faq": [
+      {"q": "Can this be used in classrooms?", "a": "Yes, this page is classroom-friendly for early learners."},
+      {"q": "What paper should I use?", "a": "Standard printer paper works, but cardstock is great for markers."}
+    ],
+    "related_page_slugs": ["community-helpers-firefighter"]
   }
 ]
