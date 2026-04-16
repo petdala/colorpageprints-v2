@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
 import { EmailCapture } from "@/components/sections/EmailCapture";
 import { BookCard } from "@/components/ui/BookCard";
@@ -158,11 +157,7 @@ export function RitualBundleClient({ ritual, book, relatedBooks }: RitualBundleC
           </section>
 
           <section className="space-y-3 rounded-xl bg-surface-alt p-6 text-center">
-            <p className="text-text">Share your ritual setup: tag @colorpageprints + #coloringritual on Instagram</p>
-            <div className="flex justify-center gap-3 text-sm">
-              <Link href="#" className="rounded border border-border px-3 py-2">Instagram</Link>
-              <Link href="#" className="rounded border border-border px-3 py-2">TikTok</Link>
-            </div>
+            <p className="text-text">Share your ritual: @colorpageprints on Instagram</p>
           </section>
 
           <section className="space-y-4">
