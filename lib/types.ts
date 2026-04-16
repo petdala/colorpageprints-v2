@@ -83,3 +83,14 @@ export type Wave = {
   exclusive_download_url: string;
   landing_page_slug: string;
 };
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  read_time: string;
+  image: string;
+  content: string;
+};

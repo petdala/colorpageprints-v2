@@ -1,15 +1,17 @@
+import blogPostsJson from "@/data/blog-posts.json";
 import booksJson from "@/data/books.json";
 import collectionsJson from "@/data/collections.json";
 import coloringPagesJson from "@/data/coloring-pages.json";
 import ritualsJson from "@/data/rituals.json";
 import wavesJson from "@/data/waves.json";
-import type { Book, Collection, ColoringPage, Ritual, Wave } from "@/lib/types";
+import type { BlogPost, Book, Collection, ColoringPage, Ritual, Wave } from "@/lib/types";
 
 const books = booksJson as Book[];
 const coloringPages = coloringPagesJson as ColoringPage[];
 const collections = collectionsJson as Collection[];
 const rituals = ritualsJson as Ritual[];
 const waves = wavesJson as Wave[];
+const blogPosts = blogPostsJson as BlogPost[];
 
 export function getBooks(): Book[] {
   return books;
@@ -57,4 +59,12 @@ export function getWaveBySlug(slug: string): Wave | undefined {
 
 export function getWaveByNumber(waveNumber: number): Wave | undefined {
   return waves.find((wave) => wave.wave_number === waveNumber);
+}
+
+export function getBlogPosts(): BlogPost[] {
+  return blogPosts;
+}
+
+export function getBlogPostBySlug(slug: string): BlogPost | undefined {
+  return blogPosts.find((post) => post.slug === slug);
 }
