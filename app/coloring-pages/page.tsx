@@ -5,7 +5,7 @@ import { getColoringPages } from "@/lib/data";
 import { ColoringPagesBrowserClient } from "./ColoringPagesBrowserClient";
 
 export const metadata: Metadata = {
-  title: "Free Printable Coloring Pages for Kids & Adults | ColorPagePrints",
+  title: "Free Printable Coloring Pages for Kids & Adults",
   description:
     "Download free coloring pages across animals, fantasy, space, holidays, mandalas, and more. New pages every week. Print at home."
 };

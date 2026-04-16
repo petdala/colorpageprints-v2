@@ -3,7 +3,7 @@ import { BlogIndexClient } from "./BlogIndexClient";
 import { getBlogPosts, getBooks } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "The Studio | ColorPagePrints"
+  title: "The Studio"
 };
 
 export default function BlogPage() {

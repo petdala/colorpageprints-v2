@@ -19,12 +19,12 @@ export function generateMetadata({ params }: RitualDetailProps): Metadata {
 
   if (!ritual || !book) {
     return {
-      title: "Ritual Bundle | ColorPagePrints"
+      title: "Ritual Bundle"
     };
   }
 
   return {
-    title: `${ritual.bundle_name} Ritual Bundle | ${book.title} | ColorPagePrints`,
+    title: `${ritual.bundle_name} Ritual Bundle | ${book.title}`,
     description: `Access your coloring ritual: curated playlist, guided meditation, journal prompts, and color palettes for ${book.title}.`
   };
 }

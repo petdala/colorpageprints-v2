@@ -41,12 +41,12 @@ export function generateMetadata({ params }: BlogDetailPageProps): Metadata {
 
   if (!post) {
     return {
-      title: "The Studio | ColorPagePrints"
+      title: "The Studio"
     };
   }
 
   return {
-    title: `${post.title} | The Studio | ColorPagePrints`
+    title: `${post.title} | The Studio`
   };
 }
 

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { getBooks } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "About ColorPagePrints | Premium Coloring Books for Kids & Adults",
+  title: "About Us",
   description:
     "Meet the creator behind ColorPagePrints. Research-driven, AI-powered coloring books with custom options, immersive experiences, and designs for every age."
 };

@@ -30,14 +30,14 @@ export function generateMetadata({ params }: ColoringPageDetailProps): Metadata 
 
   if (!page) {
     return {
-      title: "Free Coloring Page | ColorPagePrints"
+      title: "Free Coloring Page"
     };
   }
 
   const parentBook = getBookBySku(page.parent_book_sku);
 
   return {
-    title: `${page.title} | Free Printable Coloring Page | ColorPagePrints`,
+    title: `${page.title} | Free Printable Coloring Page`,
     description: `Download this free ${page.category} coloring page for ${page.age_range}. Part of ${parentBook?.title ?? "our coloring collection"}. Print at home on standard paper.`
   };
 }

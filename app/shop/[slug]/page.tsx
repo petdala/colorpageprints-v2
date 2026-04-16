@@ -23,12 +23,12 @@ export function generateMetadata({ params }: BookDetailPageProps): Metadata {
 
   if (!book) {
     return {
-      title: "Book Not Found | ColorPagePrints"
+      title: "Book Not Found"
     };
   }
 
   return {
-    title: `${book.title} | ${book.page_count} Pages | ColorPagePrints`
+    title: `${book.title} | ${book.page_count} Pages`
   };
 }
 

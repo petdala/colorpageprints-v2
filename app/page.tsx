@@ -6,7 +6,7 @@ import { EmailCapture } from "@/components/sections/EmailCapture";
 import { getBooks } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "ColorPagePrints | Premium Coloring Books & Free Printable Pages",
+  title: "Premium Coloring Books & Free Printable Pages",
   description:
     "Discover beautifully crafted coloring books for kids and adults. Browse our collections, try free sample pages, and shop on Amazon."
 };
@@ -56,7 +56,6 @@ export default function HomePage() {
               Try Free Samples
             </Button>
           </div>
-          <p className="text-sm text-text-muted">Trusted by 20,000+ families</p>
         </div>
       </section>
 

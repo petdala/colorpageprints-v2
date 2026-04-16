@@ -4,7 +4,7 @@ import { getBooks } from "@/lib/data";
 import { ShopPageClient } from "./ShopPageClient";
 
 export const metadata: Metadata = {
-  title: "Shop Coloring Books | Kids & Adults | ColorPagePrints"
+  title: "Shop Coloring Books | Kids & Adults"
 };
 
 export default function ShopPage() {

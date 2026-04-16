@@ -52,12 +52,12 @@ export function generateMetadata({ params }: CollectionAudiencePageProps): Metad
 
   if (!collection) {
     return {
-      title: "Collection | ColorPagePrints"
+      title: "Collection"
     };
   }
 
   return {
-    title: `${collection.title} | ColorPagePrints`
+    title: `${collection.title}`
   };
 }
 
