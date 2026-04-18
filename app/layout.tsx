@@ -28,11 +28,11 @@ export const metadata: Metadata = {
   description: "ColorPagePrints storefront and content hub",
   openGraph: {
     siteName: "ColorPagePrints",
-    images: ["/images/og-default.png"]
+    images: ["/images/og-default.jpg"]
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/og-default.png"]
+    images: ["/images/og-default.jpg"]
   }
 };
 

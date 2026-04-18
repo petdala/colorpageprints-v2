@@ -49,7 +49,7 @@ export default function AboutPage() {
       <section className="space-y-10">
         <div className="relative h-[420px] w-full overflow-hidden rounded-2xl md:h-[520px]">
           <Image
-            src="/images/about/about-hero.png"
+            src="/images/about/about-hero.jpg"
             alt="Hands coloring in a botanical coloring book on a warm wooden desk"
             fill
             priority
