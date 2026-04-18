@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -19,6 +20,12 @@ const audienceOptions: AudienceOption[] = [
 const themeOptions = ["Animals", "Fantasy", "Space", "Nature", "Mandalas", "Educational", "Holidays"];
 
 const moodOptions = ["Playful & Energetic", "Calm & Focused", "Learning-Focused"];
+
+function getAudienceIllustration(value: string) {
+  if (value.startsWith("kids")) return "/images/quiz/step-parent-kids.png";
+  if (value === "classroom") return "/images/quiz/step-teacher.png";
+  return "/images/quiz/step-teen-adult.png";
+}
 
 export default function QuizPage() {
   const router = useRouter();
@@ -66,13 +73,16 @@ export default function QuizPage() {
                   key={option.value}
                   type="button"
                   onClick={() => setAudience(option.value)}
-                  className={`w-full rounded-lg border px-4 py-3 text-left text-sm ${
+                  className={`flex w-full items-center gap-4 rounded-lg border px-4 py-3 text-left text-sm ${
                     audience === option.value
                       ? "border-text bg-text text-white"
                       : "border-border bg-background text-text"
                   }`}
                 >
-                  {option.label}
+                  <span className="relative h-16 w-16 shrink-0 overflow-hidden rounded-md bg-surface-alt">
+                    <Image src={getAudienceIllustration(option.value)} alt={option.label} fill className="object-cover" />
+                  </span>
+                  <span>{option.label}</span>
                 </button>
               ))}
             </div>

@@ -30,8 +30,13 @@ export default function HomePage() {
 
   return (
     <div className="space-y-20 pb-8">
-      <section className="relative flex min-h-[500px] items-center justify-center overflow-hidden rounded-3xl bg-surface-alt p-8 text-center">
-        <div className="max-w-3xl space-y-6">
+      <section className="relative overflow-hidden rounded-3xl bg-surface-alt">
+        <div className="absolute inset-0">
+          <Image src="/images/heroes/homepage-hero.png" alt="A hand coloring a floral illustration with pencils on a warm desk." fill priority className="object-cover" />
+          <div className="absolute inset-0 bg-background/60 backdrop-blur-[2px]" />
+        </div>
+        <div className="relative flex min-h-[500px] items-center justify-center p-8 text-center md:min-h-[620px]">
+          <div className="max-w-3xl space-y-6">
           <h1 className="font-heading text-[40px] leading-tight text-text md:text-[56px]">
             Beautifully Crafted Coloring Experiences.
           </h1>
@@ -43,6 +48,7 @@ export default function HomePage() {
               Try Free Samples
             </Button>
           </div>
+        </div>
         </div>
       </section>
 

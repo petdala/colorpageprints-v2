@@ -5,7 +5,7 @@
     "description": "Coloring books for ages 3-8. Bold lines, fun characters, and simple activities.",
     "audience": "kids",
     "book_skus": ["CPP-HT-001", "CPP-HT-002", "CPP-HT-003", "CPP-HT-004", "CPP-HT-005", "CPP-HT-006", "CPP-K1-001"],
-    "hero_image": "/images/heroes/kids-collection.jpg"
+    "hero_image": "/images/lifestyle/kids-collection.png"
   },
   {
     "slug": "adults",
@@ -13,6 +13,6 @@
     "description": "Premium coloring books for adults. 96 pages, single-sided, matte covers.",
     "audience": "adults",
     "book_skus": ["CPP-A1-003", "CPP-A1-004", "CPP-A1-005", "CPP-A1-016", "CPP-A1-017", "CPP-A1-018", "CPP-A1-019"],
-    "hero_image": "/images/heroes/cozy-collection.jpg"
+    "hero_image": "/images/lifestyle/adults-collection.png"
   }
 ]

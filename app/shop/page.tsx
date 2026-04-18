@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { getBooks } from "@/lib/data";
 import { ShopPageClient } from "./ShopPageClient";
@@ -32,6 +33,9 @@ export default function ShopPage() {
         <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Shop", href: "/shop" }]} />
         <h1 className="font-heading text-3xl text-text">Our Books</h1>
         <p className="text-lg text-text-muted">Premium coloring books for every age and interest.</p>
+        <div className="relative h-56 overflow-hidden rounded-2xl bg-surface-alt md:h-72">
+          <Image src="/images/heroes/shop-hero.png" alt="A curated still life of coloring books, pencils, and cozy studio details." fill priority className="object-cover" />
+        </div>
       </header>
 
       <ShopPageClient books={books} />

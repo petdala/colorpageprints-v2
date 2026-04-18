@@ -27,6 +27,13 @@ function getSpotifyPlaylistId(uri: string | null) {
   return match ? match[1] : null;
 }
 
+const ritualMoodImages = {
+  "cozy-girl-self-care": "/images/ritual/cozy-girl-self-care.png",
+  "mushroom-cottagecore": "/images/ritual/mushroom-cottagecore.png",
+  "stained-glass": "/images/ritual/stained-glass.png",
+  "cats-cozy-scenes": "/images/ritual/cats-cozy-scenes.png"
+};
+
 export function RitualBundleClient({ ritual, book, relatedBooks }: RitualBundleClientProps) {
   const [email, setEmail] = useState("");
   const [unlocked, setUnlocked] = useState(false);
@@ -41,6 +48,7 @@ export function RitualBundleClient({ ritual, book, relatedBooks }: RitualBundleC
   }, []);
 
   const spotifyPlaylistId = getSpotifyPlaylistId(ritual.playlist_spotify_uri ?? null);
+  const ritualPreviewImage = ritualMoodImages[ritual.slug as keyof typeof ritualMoodImages] ?? book.cover_image;
 
   async function unlockBundle(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -64,7 +72,7 @@ export function RitualBundleClient({ ritual, book, relatedBooks }: RitualBundleC
     <div className="space-y-10">
       <section className="grid gap-8 lg:grid-cols-2">
         <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-border bg-surface-alt">
-          <Image src={book.cover_image} alt={book.title} fill className="object-cover" />
+          <Image src={ritualPreviewImage} alt={ritual.bundle_name} fill priority className="object-cover" />
         </div>
 
         <div className="space-y-3">

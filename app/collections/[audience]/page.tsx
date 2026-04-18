@@ -32,6 +32,12 @@ const fallbackCollections = {
   }
 };
 
+const ritualCoverImages = {
+  "mushroom-cottagecore": "/images/covers/cpp-mc-001.png",
+  "stained-glass": "/images/covers/cpp-sg-001.png",
+  "cats-cozy-scenes": "/images/covers/cpp-cc-001.png"
+};
+
 export function generateStaticParams() {
   const dataSlugs = getCollections().map((collection) => collection.audience);
   const requiredSlugs = ["kids", "adults", "educational", "seasonal"];
@@ -90,7 +96,7 @@ export default function CollectionAudiencePage({ params }: CollectionAudiencePag
                   .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
                   .join(" "),
               href: `/ritual/${slug}`,
-              coverImage: matchedBook?.cover_image ?? "/images/covers/ritual-placeholder.jpg"
+              coverImage: matchedBook?.cover_image ?? ritualCoverImages[slug as keyof typeof ritualCoverImages] ?? "/images/covers/ritual-placeholder.jpg"
             };
           });
         })()
