@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BookCard } from "@/components/ui/BookCard";
@@ -91,7 +92,9 @@ export default function HomePage() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {studioPosts.map((post) => (
             <article key={post.slug} className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
-              <div className="h-44 bg-surface-alt" />
+              <div className="relative h-44 bg-surface-alt">
+                <Image src={post.image} alt={post.title} fill className="object-cover" />
+              </div>
               <div className="space-y-3 p-5">
                 <h3 className="font-heading text-xl text-text">{post.title}</h3>
                 <p className="text-sm text-text-muted">{post.excerpt}</p>

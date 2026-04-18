@@ -124,7 +124,9 @@ export default function CollectionAudiencePage({ params }: CollectionAudiencePag
         />
         <h1 className="font-heading text-3xl text-text">{collection.title}</h1>
         <p className="max-w-3xl text-lg text-text-muted">{collection.description}</p>
-        <div className="h-48 rounded-xl bg-card" />
+        <div className="relative h-48 overflow-hidden rounded-xl bg-card md:h-64">
+          <Image src={collection.hero_image} alt={collection.title} fill className="object-cover" />
+        </div>
       </section>
 
       <section className="space-y-5">

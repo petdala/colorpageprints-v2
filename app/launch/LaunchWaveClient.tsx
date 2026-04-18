@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FormEvent, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { trackEvent } from "@/lib/analytics";
@@ -108,8 +109,8 @@ export function LaunchWaveClient({ wave, books }: LaunchWaveClientProps) {
 
         <div className="flex flex-wrap items-end gap-3 overflow-x-auto pb-2">
           {books.map((book, index) => (
-            <div key={book.sku} className="h-36 w-24 rounded-lg border border-border bg-card shadow-sm" style={{ marginLeft: index === 0 ? 0 : -16 }}>
-              <img src={book.cover_image} alt={book.title} className="h-full w-full rounded-lg object-cover" />
+            <div key={book.sku} className="relative h-36 w-24 rounded-lg border border-border bg-card shadow-sm" style={{ marginLeft: index === 0 ? 0 : -16 }}>
+              <Image src={book.cover_image} alt={book.title} fill className="rounded-lg object-cover" />
             </div>
           ))}
         </div>
@@ -124,7 +125,7 @@ export function LaunchWaveClient({ wave, books }: LaunchWaveClientProps) {
           return (
             <article key={book.sku} className="space-y-3 rounded-xl border border-border bg-card p-4 shadow-sm">
               <div className="relative h-52 overflow-hidden rounded-md bg-surface-alt">
-                <img src={book.cover_image} alt={book.title} className="h-full w-full object-cover" />
+                <Image src={book.cover_image} alt={book.title} fill className="object-cover" />
               </div>
               <h2 className="font-heading text-xl text-text">{book.title}</h2>
               <p className="text-sm font-medium text-text">${book.price.toFixed(2)}</p>

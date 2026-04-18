@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -24,7 +25,7 @@ export function Nav() {
     <header className="sticky top-0 z-40 h-16 border-b border-border bg-background">
       <div className="container-1200 flex h-full items-center justify-between">
         <Link href="/" className="inline-flex items-center" aria-label="ColorPagePrints home">
-          <img src="/images/logo-primary.png" alt="ColorPagePrints" className="h-6 w-auto md:h-8" />
+          <Image src="/images/logo-primary.png" alt="ColorPagePrints" width={3000} height={600} className="h-6 w-auto md:h-8" priority />
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">

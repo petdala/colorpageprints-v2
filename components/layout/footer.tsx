@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const shopLinks = [
@@ -24,7 +25,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="space-y-3">
             <Link href="/" className="inline-flex items-center" aria-label="ColorPagePrints home">
-              <img src="/images/logo-primary.png" alt="ColorPagePrints" className="h-6 w-auto md:h-8" />
+              <Image src="/images/logo-primary.png" alt="ColorPagePrints" width={3000} height={600} className="h-6 w-auto md:h-8" />
             </Link>
             <p className="text-sm text-text-muted">Premium coloring books and printable pages.</p>
           </div>

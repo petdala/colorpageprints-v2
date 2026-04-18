@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { EmailCapture } from "@/components/sections/EmailCapture";
 import { StarRating } from "@/components/ui/StarRating";
@@ -46,11 +47,15 @@ export default function AboutPage() {
   return (
     <div className="space-y-20 pb-8">
       <section className="space-y-10">
-        <div
-          role="img"
-          aria-label="Hands coloring in a botanical coloring book on a warm wooden desk"
-          className="min-h-[400px] w-full rounded-2xl bg-surface-alt"
-        />
+        <div className="relative h-[420px] w-full overflow-hidden rounded-2xl md:h-[520px]">
+          <Image
+            src="/images/about/about-hero.png"
+            alt="Hands coloring in a botanical coloring book on a warm wooden desk"
+            fill
+            priority
+            className="object-cover"
+          />
+        </div>
 
         <div className="mx-auto max-w-4xl space-y-6 text-left md:text-center">
           <h1 className="font-heading text-3xl text-text">Your next escape starts here.</h1>
@@ -102,7 +107,7 @@ export default function AboutPage() {
         <div className="flex gap-4 overflow-x-auto pb-2">
           {books.map((book) => (
             <Link key={book.sku} href={`/shop/${book.slug}`} className="relative h-48 w-32 shrink-0 overflow-hidden rounded-lg bg-card">
-              <img src={book.cover_image} alt={book.title} className="h-full w-full object-cover" />
+              <Image src={book.cover_image} alt={book.title} fill className="object-cover" />
             </Link>
           ))}
         </div>
