@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Blaze the Firefighter coloring page preview</title>
+  <desc id="desc">Simple black line art of a firefighter bear holding a hose.</desc>
+  <rect width="1000" height="1000" fill="#fffdf8"/>
+  <g fill="none" stroke="#2f2c29" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="18" d="M500 178c-116 0-210 91-210 204 0 63 30 119 76 157v74c0 75 60 135 134 135s134-60 134-135v-74c46-38 76-94 76-157 0-113-94-204-210-204Z"/>
+    <path stroke-width="18" d="M344 292c48-45 264-45 312 0"/>
+    <path stroke-width="16" d="M342 298c10-89 76-138 158-138s148 49 158 138"/>
+    <path stroke-width="14" d="M384 253h232M420 212h160M480 162v90"/>
+    <path stroke-width="14" d="M426 384c22-20 52-20 74 0M500 384c22-20 52-20 74 0"/>
+    <path stroke-width="12" d="M468 455c16 12 48 12 64 0M434 534c36 30 96 30 132 0"/>
+    <path stroke-width="16" d="M374 615c-64 38-100 96-106 178M626 615c64 38 100 96 106 178"/>
+    <path stroke-width="16" d="M332 690h336M314 772h372"/>
+    <path stroke-width="14" d="M264 830h472M202 838c0-38 30-68 68-68h72M798 838c0-38-30-68-68-68h-72"/>
+    <path stroke-width="12" d="M188 760c44-28 88-28 132 0M680 760c44-28 88-28 132 0"/>
+    <path stroke-width="12" d="M236 660c-42-20-84-18-126 6 56 6 98 24 126 54M764 660c42-20 84-18 126 6-56 6-98 24-126 54"/>
+    <path stroke-width="10" d="M142 884h716"/>
+  </g>
+</svg>

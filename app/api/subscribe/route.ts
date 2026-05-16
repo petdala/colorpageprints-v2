@@ -1,8 +1,13 @@
 import { NextResponse } from "next/server";
+import type { InterestType } from "@/lib/types";
 
 type SubscribePayload = {
   email?: string;
   tag?: string;
+  interestSlug?: string;
+  interestType?: InterestType;
+  themePreference?: string;
+  requestNotes?: string;
 };
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -27,11 +32,19 @@ export async function POST(request: Request) {
       );
     }
 
-    // TODO: Integrate with Kit (ConvertKit) API — POST to https://api.convertkit.com/v3/forms/{form_id}/subscribe
-    console.log("Subscribe submission", { email, tag });
+    // TODO: Connect this endpoint to Kit or another ESP / CRM so launch-list, sampler,
+    // preorder-reminder, and theme-vote submissions are stored durably and delivered.
+    console.info("ColorPagePrints signup captured", {
+      email,
+      tag,
+      interestSlug: payload.interestSlug?.trim() || null,
+      interestType: payload.interestType ?? "global_launch_list",
+      themePreference: payload.themePreference?.trim() || null,
+      requestNotes: payload.requestNotes?.trim() || null
+    });
 
     return NextResponse.json(
-      { success: true, message: "Subscribed" },
+      { success: true, message: "Captured" },
       { status: 200, headers: { "Content-Type": "application/json" } }
     );
   } catch (error) {

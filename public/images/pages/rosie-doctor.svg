@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Rosie the Doctor coloring page preview</title>
+  <desc id="desc">Simple black line art of a doctor rabbit with a stethoscope.</desc>
+  <rect width="1000" height="1000" fill="#fffdf8"/>
+  <g fill="none" stroke="#2f2c29" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="18" d="M402 290c-58-86-78-166-44-194 37-30 110 32 164 142M598 290c58-86 78-166 44-194-37-30-110 32-164 142"/>
+    <path stroke-width="18" d="M500 232c-112 0-204 88-204 197 0 69 38 130 94 165v58c0 62 49 112 110 112s110-50 110-112v-58c56-35 94-96 94-165 0-109-92-197-204-197Z"/>
+    <path stroke-width="14" d="M414 404c22-18 48-18 70 0M516 404c22-18 48-18 70 0"/>
+    <path stroke-width="12" d="M478 462c14 10 30 10 44 0M442 526c38 28 78 28 116 0"/>
+    <path stroke-width="16" d="M344 648c-50 40-80 92-90 156M656 648c50 40 80 92 90 156"/>
+    <path stroke-width="16" d="M326 704h348M304 792h392"/>
+    <path stroke-width="14" d="M440 650v188M560 650v188"/>
+    <path stroke-width="12" d="M392 704c-24 48-22 98 6 150M608 704c24 48 22 98-6 150"/>
+    <path stroke-width="12" d="M396 678c-80 28-106 84-72 168"/>
+    <path stroke-width="12" d="M604 678c80 28 106 84 72 168"/>
+    <circle cx="324" cy="846" r="28" stroke-width="12"/>
+    <circle cx="676" cy="846" r="28" stroke-width="12"/>
+    <path stroke-width="12" d="M482 726h36M500 708v36"/>
+    <path stroke-width="10" d="M204 884h592"/>
+  </g>
+</svg>

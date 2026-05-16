@@ -4,9 +4,18 @@ import collectionsJson from "@/data/collections.json";
 import coloringPagesJson from "@/data/coloring-pages.json";
 import ritualsJson from "@/data/rituals.json";
 import wavesJson from "@/data/waves.json";
+import { getBookStatus } from "@/lib/storefront";
 import type { BlogPost, Book, Collection, ColoringPage, Ritual, Wave } from "@/lib/types";
 
-const books = booksJson as Book[];
+const books = (booksJson as Book[]).map((book) => ({
+  ...book,
+  interior_previews: book.interior_previews ?? [],
+  free_sample_slugs: book.free_sample_slugs ?? [],
+  amazon_reviews: book.amazon_reviews ?? [],
+  keywords: book.keywords ?? [],
+  related_skus: book.related_skus ?? [],
+  theme_tags: book.theme_tags ?? []
+}));
 const coloringPages = coloringPagesJson as ColoringPage[];
 const collections = collectionsJson as Collection[];
 const rituals = ritualsJson as Ritual[];
@@ -15,6 +24,28 @@ const blogPosts = blogPostsJson as BlogPost[];
 
 export function getBooks(): Book[] {
   return books;
+}
+
+export function getSortedBooks(): Book[] {
+  return [...books].sort((left, right) => {
+    if (Boolean(left.is_flagship) !== Boolean(right.is_flagship)) {
+      return left.is_flagship ? -1 : 1;
+    }
+
+    return left.priority - right.priority || left.title.localeCompare(right.title);
+  });
+}
+
+export function getFlagshipBook(): Book | undefined {
+  return books.find((book) => book.is_flagship) ?? getSortedBooks()[0];
+}
+
+export function getLaunchShelfBooks(): Book[] {
+  return getSortedBooks();
+}
+
+export function getPipelineBooks(): Book[] {
+  return getSortedBooks().filter((book) => getBookStatus(book) !== "available");
 }
 
 export function getBookBySlug(slug: string): Book | undefined {

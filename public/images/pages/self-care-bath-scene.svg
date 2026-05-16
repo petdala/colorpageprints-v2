@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Self-Care Bath Scene coloring page preview</title>
+  <desc id="desc">Simple black line art of a calm bath scene with candles and plants.</desc>
+  <rect width="1000" height="1000" fill="#fffdf8"/>
+  <g fill="none" stroke="#2f2c29" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="18" d="M218 520h564c42 0 76 34 76 76v18c0 88-72 160-160 160H302c-88 0-160-72-160-160v-18c0-42 34-76 76-76Z"/>
+    <path stroke-width="16" d="M206 520c16-112 94-176 208-176h174c112 0 190 64 206 176"/>
+    <path stroke-width="14" d="M318 444c46-28 96-28 150 0M536 444c46-28 96-28 150 0"/>
+    <path stroke-width="12" d="M286 610c134 28 288 30 428 0M300 682h400"/>
+    <path stroke-width="12" d="M256 774l-38 78M744 774l38 78"/>
+    <path stroke-width="14" d="M134 338h92v182M774 338h92v182"/>
+    <path stroke-width="12" d="M158 338v-70M202 338v-70M798 338v-70M842 338v-70"/>
+    <path stroke-width="10" d="M154 250c-20-30 20-44 0-74M198 250c-20-30 20-44 0-74M794 250c-20-30 20-44 0-74M838 250c-20-30 20-44 0-74"/>
+    <path stroke-width="12" d="M400 310c-30-70-16-126 42-168 18 78 6 134-42 168ZM600 310c30-70 16-126-42-168-18 78-6 134 42 168Z"/>
+    <path stroke-width="10" d="M456 304c28-38 60-38 88 0"/>
+    <path stroke-width="10" d="M328 240c18-44 52-78 102-102M672 240c-18-44-52-78-102-102"/>
+  </g>
+</svg>

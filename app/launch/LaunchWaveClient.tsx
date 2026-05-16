@@ -1,9 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { BookStatusBadge } from "@/components/ui/BookStatusBadge";
 import { trackEvent } from "@/lib/analytics";
+import { getBookPrimaryCtaHref, getBookPrimaryCtaLabel, getBookPurchaseUrl, shouldShowBookPrice } from "@/lib/storefront";
 import type { Book, Wave } from "@/lib/types";
 
 type LaunchWaveClientProps = {
@@ -29,6 +32,7 @@ export function LaunchWaveClient({ wave, books }: LaunchWaveClientProps) {
   const launchDate = useMemo(() => new Date(`${wave.launch_date}T00:00:00Z`), [wave.launch_date]);
   const remaining = getRemaining(launchDate);
   const isLive = wave.status === "live" || remaining.isExpired;
+  const exclusiveDownloadReady = false;
 
   const [email, setEmail] = useState("");
   const [joined, setJoined] = useState(false);
@@ -38,6 +42,7 @@ export function LaunchWaveClient({ wave, books }: LaunchWaveClientProps) {
   const [orderNumber, setOrderNumber] = useState("");
   const [verified, setVerified] = useState(false);
   const [verifyLoading, setVerifyLoading] = useState(false);
+  const [verifyMessage, setVerifyMessage] = useState<string | null>(null);
 
   async function submitLaunchList(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -47,7 +52,7 @@ export function LaunchWaveClient({ wave, books }: LaunchWaveClientProps) {
       await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, tag: `launch-wave-${wave.wave_number}` })
+        body: JSON.stringify({ email, tag: `launch-wave-${wave.wave_number}`, interestType: "global_launch_list" })
       });
       trackEvent("launch_list_signup", { wave: String(wave.wave_number) });
       setJoined(true);
@@ -58,6 +63,8 @@ export function LaunchWaveClient({ wave, books }: LaunchWaveClientProps) {
 
   async function submitVerification(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setVerified(false);
+    setVerifyMessage(null);
     setVerifyLoading(true);
 
     try {
@@ -66,10 +73,16 @@ export function LaunchWaveClient({ wave, books }: LaunchWaveClientProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: verifyEmail, order_number: orderNumber, wave: wave.wave_number })
       });
+      const data = (await response.json().catch(() => null)) as { message?: string } | null;
 
       if (response.ok) {
         setVerified(true);
+        return;
       }
+
+      setVerifyMessage(data?.message ?? "Unable to verify your order right now.");
+    } catch {
+      setVerifyMessage("Unable to verify your order right now.");
     } finally {
       setVerifyLoading(false);
     }
@@ -103,14 +116,16 @@ export function LaunchWaveClient({ wave, books }: LaunchWaveClientProps) {
 
       <section className="space-y-5">
         <div className="space-y-2">
-          <h1 className="font-heading text-3xl text-text">Wave {wave.wave_number}: {wave.title}</h1>
+          <h1 className="font-heading text-3xl text-text">
+            Wave {wave.wave_number}: {wave.title}
+          </h1>
           <p className="text-text-muted">Drops {launchDate.toLocaleDateString()}. Be first.</p>
         </div>
 
         <div className="flex flex-wrap items-end gap-3 overflow-x-auto pb-2">
-          {books.map((book, index) => (
-            <div key={book.sku} className="relative h-36 w-24 rounded-lg border border-border bg-card shadow-sm" style={{ marginLeft: index === 0 ? 0 : -16 }}>
-              <Image src={book.cover_image} alt={book.title} fill className="rounded-lg object-cover" />
+          {books.map((book) => (
+            <div key={book.sku} className="relative h-36 w-24 rounded-lg border border-border bg-card shadow-sm">
+              <Image src={book.cover_image ?? "/images/covers/ritual-placeholder.jpg"} alt={book.title} fill className="rounded-lg object-cover" />
             </div>
           ))}
         </div>
@@ -118,23 +133,38 @@ export function LaunchWaveClient({ wave, books }: LaunchWaveClientProps) {
 
       <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {books.map((book) => {
-          const firstSentence = book.description.split(".")[0] + ".";
-          const asin = book.amazon_asin === "TBD" ? "B000000000" : book.amazon_asin;
-          const amazonUrl = `https://amazon.com/dp/${asin}?tag=colorpageprints-20`;
+          const firstSentence = `${book.description.split(".")[0]}.`;
+          const purchaseUrl = getBookPurchaseUrl(book);
+          const primaryHref = getBookPrimaryCtaHref(book);
+          const primaryLabel = getBookPrimaryCtaLabel(book);
 
           return (
             <article key={book.sku} className="space-y-3 rounded-xl border border-border bg-card p-4 shadow-sm">
               <div className="relative h-52 overflow-hidden rounded-md bg-surface-alt">
-                <Image src={book.cover_image} alt={book.title} fill className="object-cover" />
+                <Image src={book.cover_image ?? "/images/covers/ritual-placeholder.jpg"} alt={book.title} fill className="object-cover" />
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <BookStatusBadge book={book} />
               </div>
               <h2 className="font-heading text-xl text-text">{book.title}</h2>
-              <p className="text-sm font-medium text-text">${book.price.toFixed(2)}</p>
+              {shouldShowBookPrice(book) && typeof book.price === "number" ? <p className="text-sm font-medium text-text">${book.price.toFixed(2)}</p> : null}
               <p className="text-sm text-text-muted">{firstSentence}</p>
-              {isLive ? (
-                <Button href={amazonUrl} onClick={() => trackEvent("amazon_click", { sku: book.sku, source: "launch_wave" })}>
-                  Buy on Amazon →
+              <div className="flex flex-wrap gap-3">
+                <Button
+                  href={primaryHref}
+                  onClick={() => trackEvent("launch_wave_cta", { sku: book.sku, wave: String(wave.wave_number) })}
+                >
+                  {primaryLabel}
                 </Button>
-              ) : null}
+                <Link href={`/shop/${book.slug}`} className="inline-flex items-center text-sm font-medium text-text underline decoration-cta underline-offset-4">
+                  View Details
+                </Link>
+                {isLive && purchaseUrl ? (
+                  <Button href={purchaseUrl} variant="secondary">
+                    Buy Now
+                  </Button>
+                ) : null}
+              </div>
             </article>
           );
         })}
@@ -163,7 +193,7 @@ export function LaunchWaveClient({ wave, books }: LaunchWaveClientProps) {
               {joinLoading ? "Joining..." : "Join the Launch List →"}
             </Button>
           </form>
-          {joined ? <p className="text-sm text-text-muted">You're on the list.</p> : null}
+          {joined ? <p className="text-sm text-text-muted">You’re on the list.</p> : null}
         </section>
       ) : (
         <section className="space-y-3 rounded-xl border border-border bg-card p-6">
@@ -190,11 +220,8 @@ export function LaunchWaveClient({ wave, books }: LaunchWaveClientProps) {
             </Button>
           </form>
 
-          {verified ? (
-            <Button href={wave.exclusive_download_url}>
-              Download Exclusive
-            </Button>
-          ) : null}
+          {verified ? (exclusiveDownloadReady ? <Button href={wave.exclusive_download_url}>Download Exclusive</Button> : <p className="text-sm text-text-muted">Your order is verified. The exclusive download files are being prepared and will be emailed when ready.</p>) : null}
+          {verifyMessage ? <p className="text-sm text-text-muted">{verifyMessage}</p> : null}
         </section>
       )}
     </div>

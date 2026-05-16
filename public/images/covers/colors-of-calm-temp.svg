@@ -1,0 +1,25 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1500" rx="72" fill="#FAFAF8"/>
+  <rect x="78" y="78" width="1044" height="1344" rx="52" fill="#F5F3F0" stroke="#E8E4DF" stroke-width="4"/>
+  <circle cx="966" cy="258" r="92" fill="#F05A28" fill-opacity="0.15"/>
+  <circle cx="260" cy="1130" r="150" fill="#9CAD87" fill-opacity="0.16"/>
+  <path d="M253 427C359 315 529 305 649 399C768 492 789 664 695 783C601 902 429 914 315 816C201 719 148 538 253 427Z" fill="#FFFFFF" stroke="#D5D0C8" stroke-width="4"/>
+  <path d="M438 475C510 419 622 428 678 505C735 583 717 692 641 750C565 808 455 794 398 719C341 643 365 531 438 475Z" fill="#FAFAF8" stroke="#D5D0C8" stroke-width="4"/>
+  <path d="M512 546C553 523 609 534 633 577C656 620 641 674 597 699C553 724 498 710 475 668C451 626 471 570 512 546Z" fill="#F5F3F0" stroke="#D5D0C8" stroke-width="4"/>
+  <path d="M236 381C309 505 388 610 487 701C583 789 686 848 820 894" stroke="#9CAD87" stroke-width="8" stroke-linecap="round" stroke-opacity="0.55"/>
+  <path d="M809 347C702 455 619 565 552 695C491 812 460 929 455 1081" stroke="#F0A830" stroke-width="8" stroke-linecap="round" stroke-opacity="0.45"/>
+  <path d="M290 912C378 867 470 849 574 861C682 874 767 916 854 994" stroke="#F05A28" stroke-width="8" stroke-linecap="round" stroke-opacity="0.38"/>
+  <g opacity="0.52">
+    <circle cx="523" cy="621" r="196" stroke="#1A1A1A" stroke-width="2"/>
+    <circle cx="523" cy="621" r="142" stroke="#1A1A1A" stroke-width="2"/>
+    <circle cx="523" cy="621" r="86" stroke="#1A1A1A" stroke-width="2"/>
+    <path d="M523 425V817M327 621H719M384 482L662 760M662 482L384 760" stroke="#1A1A1A" stroke-width="2"/>
+  </g>
+  <text x="132" y="190" fill="#8A8580" font-family="Arial, sans-serif" font-size="34" letter-spacing="10">FLAGSHIP SAMPLER</text>
+  <text x="132" y="1038" fill="#1A1A1A" font-family="Georgia, serif" font-size="112" font-weight="700">Colors</text>
+  <text x="132" y="1160" fill="#1A1A1A" font-family="Georgia, serif" font-size="112" font-weight="700">of Calm</text>
+  <text x="132" y="1242" fill="#8A8580" font-family="Arial, sans-serif" font-size="38">Mindful mandalas for adult reset</text>
+  <rect x="132" y="1295" width="324" height="58" rx="29" fill="#1A1A1A"/>
+  <text x="166" y="1335" fill="#FAFAF8" font-family="Arial, sans-serif" font-size="24" letter-spacing="3">ARRIVE  STEADY  RETURN</text>
+  <circle cx="1032" cy="1307" r="34" fill="#F05A28"/>
+</svg>

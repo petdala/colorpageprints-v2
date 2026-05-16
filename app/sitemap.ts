@@ -8,7 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticUrls: MetadataRoute.Sitemap = [
     "",
+    "/colors-of-calm/",
     "/shop/",
+    "/launch-list/",
+    "/collections/",
     "/coloring-pages/",
     "/blog/",
     "/about/",

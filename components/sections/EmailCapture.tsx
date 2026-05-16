@@ -17,7 +17,6 @@ export function EmailCapture({ heading, subtext, buttonText, tag }: EmailCapture
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
     setStatus("loading");
 
     try {
@@ -26,7 +25,7 @@ export function EmailCapture({ heading, subtext, buttonText, tag }: EmailCapture
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ email, tag })
+        body: JSON.stringify({ email, tag, interestType: "global_launch_list" })
       });
 
       if (!response.ok) {
@@ -43,9 +42,9 @@ export function EmailCapture({ heading, subtext, buttonText, tag }: EmailCapture
   }
 
   return (
-    <section className="rounded-xl bg-card p-6 shadow-sm">
-      <h3 className="font-heading text-xl text-text">{heading}</h3>
-      <p className="mt-2 text-sm text-text-muted">{subtext}</p>
+    <section className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+      <h3 className="font-heading text-2xl text-text">{heading}</h3>
+      <p className="mt-2 text-sm leading-6 text-text-muted">{subtext}</p>
 
       <form className="mt-4 flex flex-col gap-3 md:flex-row" onSubmit={handleSubmit}>
         <input
@@ -54,17 +53,16 @@ export function EmailCapture({ heading, subtext, buttonText, tag }: EmailCapture
           onChange={(event) => setEmail(event.target.value)}
           placeholder="you@example.com"
           required
-          className="min-h-12 w-full rounded-sm border border-border bg-white px-4 py-2.5 text-sm text-text placeholder:text-text-light focus:outline-none focus:ring-2 focus:ring-cta/30"
+          className="min-h-12 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-text placeholder:text-text-light focus:outline-none focus:ring-2 focus:ring-cta/20"
         />
         <Button type="submit" className="md:w-auto" disabled={status === "loading"}>
           {status === "loading" ? "Submitting..." : buttonText}
         </Button>
       </form>
 
-      {status === "success" ? <p className="mt-2 text-xs text-text-muted">Thanks, you're subscribed.</p> : null}
-      {status === "error" ? <p className="mt-2 text-xs text-cta">Something went wrong. Please try again.</p> : null}
-
-      <p className="mt-3 text-xs text-text-light">We respect your privacy.</p>
+      {status === "success" ? <p className="mt-2 text-sm text-text-muted">Thanks, you’re on the list.</p> : null}
+      {status === "error" ? <p className="mt-2 text-sm text-cta">Something went wrong. Please try again.</p> : null}
+      <p className="mt-3 text-xs text-text-light">We respect your privacy and only send the updates you asked for.</p>
     </section>
   );
 }

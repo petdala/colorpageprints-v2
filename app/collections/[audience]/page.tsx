@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { EmailCapture } from "@/components/sections/EmailCapture";
+import { LaunchInterestForm } from "@/components/sections/LaunchInterestForm";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { BookCard } from "@/components/ui/BookCard";
 import { getBooks, getCollections, getColoringPages, getRituals } from "@/lib/data";
@@ -120,11 +120,11 @@ export default function CollectionAudiencePage({ params }: CollectionAudiencePag
 
   return (
     <div className="space-y-12">
-      <section className="space-y-4 rounded-2xl bg-surface-alt p-8">
+      <section className="space-y-4 rounded-[32px] bg-surface-alt p-8">
         <Breadcrumbs
           items={[
             { label: "Home", href: "/" },
-            { label: "Collections", href: "/shop" },
+            { label: "Collections", href: "/collections" },
             { label: collection.title, href: `/collections/${collection.audience}` }
           ]}
         />
@@ -136,7 +136,7 @@ export default function CollectionAudiencePage({ params }: CollectionAudiencePag
       </section>
 
       <section className="space-y-5">
-        <h2 className="font-heading text-2xl text-text">Books in This Collection</h2>
+        <h2 className="font-heading text-2xl text-text">Books in this collection</h2>
         {books.length > 0 ? (
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {books.map((book) => (
@@ -149,7 +149,7 @@ export default function CollectionAudiencePage({ params }: CollectionAudiencePag
       </section>
 
       <section className="space-y-5">
-        <h2 className="font-heading text-2xl text-text">Try Free Pages from This Collection</h2>
+        <h2 className="font-heading text-2xl text-text">Try free pages from this collection</h2>
         {samplePages.length > 0 ? (
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
             {samplePages.map((page) => (
@@ -173,10 +173,8 @@ export default function CollectionAudiencePage({ params }: CollectionAudiencePag
       {collection.slug === "adults" ? (
         <section className="space-y-5 rounded-2xl border border-border bg-surface-alt p-6">
           <div className="space-y-2">
-            <h2 className="font-heading text-3xl text-text">More than books — an experience.</h2>
-            <p className="text-sm text-text-muted">
-              Select titles include curated playlists, guided meditations, journal prompts, and color palettes.
-            </p>
+            <h2 className="font-heading text-3xl text-text">Follow the adult reset lane</h2>
+            <p className="text-sm text-text-muted">Sampler requests, ritual bundles, and slower flagship launches all live here first.</p>
           </div>
 
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
@@ -185,7 +183,7 @@ export default function CollectionAudiencePage({ params }: CollectionAudiencePag
                 <div className="relative aspect-[2/3] overflow-hidden rounded-md bg-surface-alt">
                   <Image src={entry.coverImage} alt={entry.title} fill className="object-cover" />
                 </div>
-                <p className="mt-2 text-xs">🎧 Includes Ritual Bundle</p>
+                <p className="mt-2 text-xs">🎧 Companion ritual</p>
                 <p className="font-heading text-sm text-text">{entry.title}</p>
               </Link>
             ))}
@@ -193,11 +191,18 @@ export default function CollectionAudiencePage({ params }: CollectionAudiencePag
         </section>
       ) : null}
 
-      <EmailCapture
-        heading="Get weekly coloring tips + free pages"
-        subtext="Join 20,000+ families. Unsubscribe anytime."
-        buttonText="Send My Pages →"
+      <LaunchInterestForm
+        heading={collection.slug === "adults" ? "Follow the adult reset launch shelf" : "Save this collection for later"}
+        subtext={
+          collection.slug === "adults"
+            ? "Start with Colors of Calm, then get reminders when the next adult reset collection moves forward."
+            : "Use the launch list to follow the next sampler, reminder, or release update for this collection."
+        }
+        buttonText={collection.slug === "adults" ? "Save My Launch Reminder" : "Save This Collection"}
         tag={`collection-${collection.slug}`}
+        interestSlug={collection.slug === "adults" ? "colors-of-calm" : undefined}
+        interestType="global_launch_list"
+        showThemePreference
       />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />

@@ -1,18 +1,18 @@
 [
   {
     "slug": "kids",
-    "title": "Our Kids Collection",
-    "description": "Coloring books for ages 3-8. Bold lines, fun characters, and simple activities.",
+    "title": "Kids & Family",
+    "description": "Playful, screen-free coloring ideas for younger colorists, classrooms, and easy family moments.",
     "audience": "kids",
-    "book_skus": ["CPP-HT-001", "CPP-HT-002", "CPP-HT-003", "CPP-HT-004", "CPP-HT-005", "CPP-HT-006", "CPP-K1-001"],
+    "book_skus": ["CPP-HT-001"],
     "hero_image": "/images/lifestyle/kids-collection.png"
   },
   {
     "slug": "adults",
-    "title": "The Cozy Collection",
-    "description": "Premium coloring books for adults. 96 pages, single-sided, matte covers.",
+    "title": "Adult Reset",
+    "description": "Start with Colors of Calm, then follow the adult reset pipeline as new ritual-led collections move closer to launch.",
     "audience": "adults",
-    "book_skus": ["CPP-A1-003", "CPP-A1-004", "CPP-A1-005", "CPP-A1-016", "CPP-A1-017", "CPP-A1-018", "CPP-A1-019"],
+    "book_skus": ["CPP-COC-001", "CPP-A1-017"],
     "hero_image": "/images/lifestyle/adults-collection.png"
   }
 ]

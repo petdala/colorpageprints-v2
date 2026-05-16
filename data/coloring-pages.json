@@ -6,7 +6,7 @@
     "difficulty": "Easy",
     "age_range": "Ages 3-5",
     "parent_book_sku": "CPP-HT-001",
-    "preview_image": "/images/pages/blaze-firefighter.jpg",
+    "preview_image": "/images/pages/blaze-firefighter.svg",
     "pdf_download_url": "/downloads/pages/blaze-firefighter.pdf",
     "alt_text": "Free printable firefighter bear coloring page for preschoolers",
     "faq": [
@@ -22,7 +22,7 @@
     "difficulty": "Easy",
     "age_range": "Ages 3-5",
     "parent_book_sku": "CPP-HT-001",
-    "preview_image": "/images/pages/rosie-doctor.jpg",
+    "preview_image": "/images/pages/rosie-doctor.svg",
     "pdf_download_url": "/downloads/pages/rosie-doctor.pdf",
     "alt_text": "Free printable doctor rabbit coloring page for preschoolers",
     "faq": [
@@ -34,11 +34,11 @@
   {
     "slug": "self-care-bath-scene",
     "title": "Self-Care Bath Scene",
-    "category": "kids",
+    "category": "adults",
     "difficulty": "Medium",
     "age_range": "Adults",
     "parent_book_sku": "CPP-A1-017",
-    "preview_image": "/images/pages/self-care-bath-scene.jpg",
+    "preview_image": "/images/pages/self-care-bath-scene.svg",
     "pdf_download_url": "/downloads/pages/self-care-bath-scene.pdf",
     "alt_text": "Free printable cozy bath self-care coloring page",
     "faq": [
@@ -50,11 +50,11 @@
   {
     "slug": "self-care-reading-nook",
     "title": "Self-Care Reading Nook",
-    "category": "kids",
+    "category": "adults",
     "difficulty": "Medium",
     "age_range": "Adults",
     "parent_book_sku": "CPP-A1-017",
-    "preview_image": "/images/pages/self-care-reading-nook.jpg",
+    "preview_image": "/images/pages/self-care-reading-nook.svg",
     "pdf_download_url": "/downloads/pages/self-care-reading-nook.pdf",
     "alt_text": "Free printable cozy reading nook coloring page",
     "faq": [

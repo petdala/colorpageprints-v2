@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Self-Care Reading Nook coloring page preview</title>
+  <desc id="desc">Simple black line art of a cozy reading nook with a chair, lamp, book, and plant.</desc>
+  <rect width="1000" height="1000" fill="#fffdf8"/>
+  <g fill="none" stroke="#2f2c29" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="18" d="M330 390h340c54 0 98 44 98 98v180c0 68-56 124-124 124H356c-68 0-124-56-124-124V488c0-54 44-98 98-98Z"/>
+    <path stroke-width="14" d="M300 512c72 42 144 56 216 42 72-14 134-14 184 0"/>
+    <path stroke-width="14" d="M340 640h320M370 792l-42 70M630 792l42 70"/>
+    <path stroke-width="16" d="M214 862h572"/>
+    <path stroke-width="14" d="M566 264h168l-42 126H608l-42-126Z"/>
+    <path stroke-width="12" d="M650 390v166M606 556h88"/>
+    <path stroke-width="12" d="M188 328c62-68 132-94 210-78"/>
+    <path stroke-width="12" d="M204 358c60-20 122-18 186 6"/>
+    <path stroke-width="12" d="M182 430c48-26 94-26 138 0"/>
+    <path stroke-width="14" d="M410 538c40-34 82-34 126 0"/>
+    <path stroke-width="12" d="M442 522V410c38-20 76-20 114 0v112"/>
+    <path stroke-width="10" d="M460 444h78M460 478h78"/>
+    <path stroke-width="12" d="M174 620c-34-70-18-128 48-174 22 80 6 138-48 174ZM208 660c50-62 106-82 168-60-50 64-106 84-168 60Z"/>
+    <path stroke-width="10" d="M196 704v158"/>
+  </g>
+</svg>

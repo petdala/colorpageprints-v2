@@ -22,12 +22,16 @@ const dmSerifDisplay = DM_Serif_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.colorpageprints.com"),
   title: {
-    default: "ColorPagePrints | Premium Coloring Books & Free Printable Pages",
+    default: "ColorPagePrints | Colors of Calm & Upcoming Coloring Books",
     template: "%s | ColorPagePrints"
   },
-  description: "ColorPagePrints storefront and content hub",
+  description:
+    "Discover Colors of Calm, save upcoming coloring book ideas, and join the ColorPagePrints Launch List for samplers and reminders.",
   openGraph: {
     siteName: "ColorPagePrints",
+    title: "ColorPagePrints | Colors of Calm & Upcoming Coloring Books",
+    description:
+      "Discover Colors of Calm, save upcoming coloring book ideas, and join the ColorPagePrints Launch List for samplers and reminders.",
     images: ["/images/og-default.jpg"]
   },
   twitter: {

@@ -49,6 +49,7 @@ export function RitualBundleClient({ ritual, book, relatedBooks }: RitualBundleC
 
   const spotifyPlaylistId = getSpotifyPlaylistId(ritual.playlist_spotify_uri ?? null);
   const ritualPreviewImage = ritualMoodImages[ritual.slug as keyof typeof ritualMoodImages] ?? book.cover_image;
+  const ritualDownloadsReady = false;
 
   async function unlockBundle(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -125,7 +126,7 @@ export function RitualBundleClient({ ritual, book, relatedBooks }: RitualBundleC
             <p className="text-sm text-text-muted">
               A guided transition from scrolling to coloring. Press play, close your eyes, and let it bring you into the session.
             </p>
-            {ritual.meditation_file_url ? (
+            {ritualDownloadsReady && ritual.meditation_file_url ? (
               <Button href={ritual.meditation_file_url}>Download Meditation</Button>
             ) : (
               <p className="text-sm text-text-muted">Meditation recording coming soon.</p>
@@ -145,7 +146,11 @@ export function RitualBundleClient({ ritual, book, relatedBooks }: RitualBundleC
                 What do you want to carry from this session into the rest of your day?
               </blockquote>
             </div>
-            <Button href={ritual.journal_pdf_url}>Download All 10 Prompts (PDF)</Button>
+            {ritualDownloadsReady ? (
+              <Button href={ritual.journal_pdf_url}>Download All 10 Prompts (PDF)</Button>
+            ) : (
+              <p className="text-sm text-text-muted">Prompt PDF coming soon. We will email it when the ritual files are ready.</p>
+            )}
           </section>
 
           <section className="space-y-3 rounded-xl border border-border bg-card p-6">
@@ -153,7 +158,11 @@ export function RitualBundleClient({ ritual, book, relatedBooks }: RitualBundleC
             <p className="text-sm text-text-muted">
               3 palettes with Prismacolor and Faber-Castell numbers to guide your coloring.
             </p>
-            <Button href={ritual.palette_pdf_url}>Download Palette Card (PDF)</Button>
+            {ritualDownloadsReady ? (
+              <Button href={ritual.palette_pdf_url}>Download Palette Card (PDF)</Button>
+            ) : (
+              <p className="text-sm text-text-muted">Palette card coming soon.</p>
+            )}
           </section>
 
           <section className="space-y-3 rounded-xl border border-border bg-card p-6">
@@ -161,7 +170,11 @@ export function RitualBundleClient({ ritual, book, relatedBooks }: RitualBundleC
             <p className="text-sm text-text-muted">
               7 steps from candle to journal. Set up your session, follow the guide, and share your ritual.
             </p>
-            <Button href={ritual.ritual_guide_pdf_url}>Download Ritual Guide (PDF)</Button>
+            {ritualDownloadsReady ? (
+              <Button href={ritual.ritual_guide_pdf_url}>Download Ritual Guide (PDF)</Button>
+            ) : (
+              <p className="text-sm text-text-muted">Ritual guide coming soon.</p>
+            )}
           </section>
 
           <section className="space-y-3 rounded-xl bg-surface-alt p-6 text-center">

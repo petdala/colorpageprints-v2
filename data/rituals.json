@@ -1,16 +1,34 @@
 [
   {
+    "slug": "colors-of-calm",
+    "book_sku": "CPP-COC-001",
+    "bundle_name": "Colors of Calm",
+    "playlist_spotify_uri": "spotify:playlist:placeholder",
+    "meditation_title": "Arrive",
+    "meditation_duration": "12 min",
+    "meditation_file_url": "",
+    "journal_pdf_url": "/downloads/ritual/colors-of-calm-prompts.pdf",
+    "palette_pdf_url": "/downloads/ritual/colors-of-calm-palettes.pdf",
+    "ritual_guide_pdf_url": "/downloads/ritual/colors-of-calm-guide.pdf",
+    "related_ritual_slugs": [
+      "cozy-girl-self-care",
+      "mushroom-cottagecore",
+      "stained-glass"
+    ]
+  },
+  {
     "slug": "cozy-girl-self-care",
     "book_sku": "CPP-A1-017",
     "bundle_name": "Soft Hours",
     "playlist_spotify_uri": "spotify:playlist:placeholder",
     "meditation_title": "Permission to Rest",
     "meditation_duration": "10 min",
-    "meditation_file_url": "/downloads/ritual/permission-to-rest.mp3",
+    "meditation_file_url": "",
     "journal_pdf_url": "/downloads/ritual/soft-hours-prompts.pdf",
     "palette_pdf_url": "/downloads/ritual/self-care-palettes.pdf",
     "ritual_guide_pdf_url": "/downloads/ritual/self-care-ritual-guide.pdf",
     "related_ritual_slugs": [
+      "colors-of-calm",
       "mushroom-cottagecore",
       "stained-glass",
       "cats-cozy-scenes"
@@ -23,11 +41,12 @@
     "playlist_spotify_uri": "spotify:playlist:placeholder",
     "meditation_title": "Ground Into Calm",
     "meditation_duration": "10 min",
-    "meditation_file_url": "/downloads/ritual/mushroom-cottagecore-meditation.mp3",
+    "meditation_file_url": "",
     "journal_pdf_url": "/downloads/ritual/mushroom-cottagecore-prompts.pdf",
     "palette_pdf_url": "/downloads/ritual/mushroom-cottagecore-palettes.pdf",
     "ritual_guide_pdf_url": "/downloads/ritual/mushroom-cottagecore-guide.pdf",
     "related_ritual_slugs": [
+      "colors-of-calm",
       "cozy-girl-self-care",
       "stained-glass",
       "cats-cozy-scenes"
@@ -40,11 +59,12 @@
     "playlist_spotify_uri": "spotify:playlist:placeholder",
     "meditation_title": "Color and Light",
     "meditation_duration": "10 min",
-    "meditation_file_url": "/downloads/ritual/stained-glass-meditation.mp3",
+    "meditation_file_url": "",
     "journal_pdf_url": "/downloads/ritual/stained-glass-prompts.pdf",
     "palette_pdf_url": "/downloads/ritual/stained-glass-palettes.pdf",
     "ritual_guide_pdf_url": "/downloads/ritual/stained-glass-guide.pdf",
     "related_ritual_slugs": [
+      "colors-of-calm",
       "cozy-girl-self-care",
       "mushroom-cottagecore",
       "cats-cozy-scenes"
@@ -57,11 +77,12 @@
     "playlist_spotify_uri": "spotify:playlist:placeholder",
     "meditation_title": "Purring Peace",
     "meditation_duration": "10 min",
-    "meditation_file_url": "/downloads/ritual/cats-cozy-scenes-meditation.mp3",
+    "meditation_file_url": "",
     "journal_pdf_url": "/downloads/ritual/cats-cozy-scenes-prompts.pdf",
     "palette_pdf_url": "/downloads/ritual/cats-cozy-scenes-palettes.pdf",
     "ritual_guide_pdf_url": "/downloads/ritual/cats-cozy-scenes-guide.pdf",
     "related_ritual_slugs": [
+      "colors-of-calm",
       "cozy-girl-self-care",
       "mushroom-cottagecore",
       "stained-glass"

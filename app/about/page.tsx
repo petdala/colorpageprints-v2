@@ -1,53 +1,39 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { EmailCapture } from "@/components/sections/EmailCapture";
-import { StarRating } from "@/components/ui/StarRating";
 import { Button } from "@/components/ui/button";
-import { getBooks } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: {
+    absolute: "About ColorPagePrints | Research-Led Coloring Experiences"
+  },
   description:
-    "Meet the creator behind ColorPagePrints. Research-driven, AI-powered coloring books with custom options, immersive experiences, and designs for every age."
+    "Learn how ColorPagePrints builds research-led coloring experiences, starting with the Colors of Calm flagship collection."
 };
-
-const communityQuotes = [
-  "I expected another generic coloring book and got something surprisingly thoughtful.",
-  "The page quality and concepts are miles ahead of what I usually find.",
-  "My kids ask for ColorPagePrints first, every single weekend."
-];
 
 const valuePillars = [
   {
-    icon: "🔍",
-    heading: "Research-driven",
-    body: "Every book starts with real data — what people love, what's missing, and what no one else is making."
+    heading: "Research first",
+    body: "Every collection starts with what people genuinely want, what feels stale, and what no one has made well enough yet."
   },
   {
-    icon: "✨",
-    heading: "AI-powered, human-curated",
-    body: "AI gives us speed. We bring the vision, the taste, and the quality control."
+    heading: "Flagship before scale",
+    body: "Colors of Calm sets the adult reset standard before the brand expands into more lanes."
   },
   {
-    icon: "🎧",
-    heading: "More than a book",
-    body: "Music, meditations, challenges, and rituals that turn coloring into an experience."
+    heading: "AI with accountability",
+    body: "AI helps with range and speed, but the editing, taste, curation, and final standard are human."
   },
   {
-    icon: "✏️",
-    heading: "Built for you",
-    body: "Have an idea? We'll make it — from a single custom page to a six-volume series."
+    heading: "Built in waves",
+    body: "Early supporters shape what comes next through sampler requests, saved ideas, and launch reminders."
   }
 ];
 
 export default function AboutPage() {
-  const books = [...getBooks()].sort((a, b) => a.priority - b.priority);
-
   return (
-    <div className="space-y-20 pb-8">
-      <section className="space-y-10">
-        <div className="relative h-[420px] w-full overflow-hidden rounded-2xl md:h-[520px]">
+    <div className="space-y-16 pb-8">
+      <section className="grid gap-8 overflow-hidden rounded-[36px] border border-border bg-[linear-gradient(135deg,#FAFAF8_0%,#F5F3F0_62%,#fff7ef_100%)] p-6 md:p-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+        <div className="relative min-h-[420px] overflow-hidden rounded-[30px] border border-border bg-card shadow-sm">
           <Image
             src="/images/about/about-hero.jpg"
             alt="Hands coloring in a botanical coloring book on a warm wooden desk"
@@ -55,88 +41,72 @@ export default function AboutPage() {
             priority
             className="object-cover"
           />
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 to-transparent p-6">
+            <p className="text-xs uppercase tracking-[0.22em] text-text-muted">Research-led creative process</p>
+          </div>
         </div>
 
-        <div className="mx-auto max-w-4xl space-y-6 text-left md:text-center">
-          <h1 className="font-heading text-3xl text-text">Your next escape starts here.</h1>
-          <div className="h-px w-20 border-t border-line-art md:mx-auto" />
-
-          <div className="space-y-6 text-lg leading-relaxed text-text-muted">
+        <div className="space-y-6">
+          <p className="text-xs uppercase tracking-[0.24em] text-text-muted">About ColorPagePrints</p>
+          <h1 className="font-heading text-4xl leading-tight text-text md:text-5xl">Coloring experiences for different moods and moments</h1>
+          <div className="space-y-5 text-base leading-8 text-text-muted md:text-lg">
             <p>
-              Every ColorPagePrints book starts with research — not just keywords and rankings, but real conversations
-              about what people love, what's missing, and what they wish someone would finally make. I take that data,
-              add my own creative spin, and build something you won't find anywhere else.
+              ColorPagePrints creates coloring experiences for different moods and moments: some playful and easy to print, some slower,
+              calmer, and more immersive.
             </p>
             <p>
-              I use AI to help me move faster and reach more people — nothing here is hand-drawn in the traditional
-              sense, and I'm not going to pretend otherwise. What AI gives me is speed. What I bring is the vision,
-              the curation, and an obsession with getting the details right. Every page is reviewed, refined, and held
-              to a standard that most mass-produced coloring books never come close to.
+              Colors of Calm is the flagship collection: a mindful coloring ritual for adult reset, built around 50 mandalas, companion audio,
+              and a gentler creative rhythm.
             </p>
             <p>
-              But I'm building more than books. I want ColorPagePrints to be an experience — music playlists for your
-              coloring sessions, guided meditations, creative challenges, thought-provoking quotes, and activity
-              bundles that turn 15 minutes of downtime into a ritual you look forward to.
-            </p>
-            <p>
-              And if you have an idea for a coloring book — no matter how niche, how specific to your world, or how
-              "out there" it might seem — I want to hear it. One custom page or a six-volume series. Let's build your
-              escape together.
+              Every collection starts with research. I pay attention to what people genuinely love, what feels overdone, what’s missing, and what
+              kinds of books they wish someone would finally make. Then I turn those signals into original collections with a clear point of view.
             </p>
           </div>
-
-          <p className="font-heading text-2xl italic text-cta">— Derek, ColorPagePrints</p>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button href="/colors-of-calm">Explore Colors of Calm</Button>
+            <Button href="/shop" variant="secondary">
+              Browse the Launch Shelf
+            </Button>
+          </div>
         </div>
       </section>
 
-      <section className="rounded-2xl bg-surface-alt px-6 py-20">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {valuePillars.map((pillar) => (
-            <article key={pillar.heading} className="space-y-3">
-              <p className="text-2xl">{pillar.icon}</p>
-              <h2 className="font-heading text-lg text-text">{pillar.heading}</h2>
-              <p className="text-sm text-text-muted">{pillar.body}</p>
-            </article>
-          ))}
-        </div>
+      <section className="grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-start">
+        <article className="rounded-[32px] border border-border bg-card p-8 shadow-sm">
+          <h2 className="font-heading text-3xl text-text">Taste, editing, and disclosure</h2>
+          <div className="mt-4 space-y-5 text-sm leading-7 text-text-muted">
+            <p>
+              I use AI as part of that creative process, and I’m open about it. It helps me explore directions faster and build with more range.
+              But the taste, editing, curation, and final standard are mine. Every page is reviewed, refined, and chosen on purpose.
+            </p>
+            <p>
+              ColorPagePrints is being built in waves. Early supporters help shape what comes next by saving book ideas, joining sampler lists,
+              and getting reminders when collections are ready to launch.
+            </p>
+          </div>
+        </article>
+
+        <article className="rounded-[32px] border border-border bg-surface-alt p-8">
+          <p className="text-xs uppercase tracking-[0.24em] text-text-muted">Flagship first</p>
+          <h2 className="mt-3 font-heading text-3xl text-text">Colors of Calm sets the standard</h2>
+          <p className="mt-3 text-sm leading-7 text-text-muted">
+            The launch shelf keeps future books visible without pretending they are finished. Colors of Calm is the first collection meant to define the adult reset side of the brand.
+          </p>
+          <div className="mt-5">
+            <Button href="/launch-list?interest=colors-of-calm&type=sampler_request">Get the Free Sampler</Button>
+          </div>
+        </article>
       </section>
 
-      <section className="space-y-8 rounded-2xl bg-surface-alt px-6 py-12">
-        <h2 className="text-center font-heading text-2xl text-text">7 series. 47 titles. Thousands of happy colorists.</h2>
-
-        <div className="flex gap-4 overflow-x-auto pb-2">
-          {books.map((book) => (
-            <Link key={book.sku} href={`/shop/${book.slug}`} className="relative h-48 w-32 shrink-0 overflow-hidden rounded-lg bg-card">
-              <Image src={book.cover_image} alt={book.title} fill className="object-cover" />
-            </Link>
-          ))}
-        </div>
-
-        <div className="flex justify-center">
-          <Button href="/shop">Browse All Books →</Button>
-        </div>
+      <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {valuePillars.map((pillar) => (
+          <article key={pillar.heading} className="rounded-[28px] border border-border bg-card p-6 shadow-sm">
+            <h2 className="font-heading text-2xl text-text">{pillar.heading}</h2>
+            <p className="mt-3 text-sm leading-7 text-text-muted">{pillar.body}</p>
+          </article>
+        ))}
       </section>
-
-      <section className="space-y-6">
-        <h2 className="font-heading text-2xl text-text">What people are saying.</h2>
-        <div className="grid gap-5 md:grid-cols-3">
-          {communityQuotes.map((quote, index) => (
-            <article key={index} className="space-y-3 rounded-xl border border-border bg-card p-5 shadow-sm">
-              <p className="text-6xl leading-none text-border">“</p>
-              <p className="italic text-text-muted">{quote}</p>
-              <StarRating rating={5} count={47} />
-              <p className="text-xs text-text-light">— Amazon reviewer</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <EmailCapture
-        heading="Get free coloring pages + weekly tips from the studio."
-        subtext="Weekly ideas, printable freebies, and studio notes."
-        buttonText="Send My Pages →"
-        tag="about"
-      />
     </div>
   );
 }

@@ -1,16 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const shopLinks = [
-  { href: "/shop", label: "Shop" },
-  { href: "/collections/kids", label: "Kids Collection" },
-  { href: "/collections/adults", label: "Adult Collection" }
+const exploreLinks = [
+  { href: "/colors-of-calm", label: "Colors of Calm" },
+  { href: "/shop", label: "Launch Shelf" },
+  { href: "/launch-list", label: "Launch List" }
 ];
 
-const contentLinks = [
-  { href: "/coloring-pages", label: "Free Pages" },
+const collectionLinks = [
+  { href: "/collections", label: "Collections" },
+  { href: "/collections/adults", label: "Adult Reset" },
+  { href: "/collections/kids", label: "Kids & Family" },
+  { href: "/coloring-pages", label: "Free Library" }
+];
+
+const studioLinks = [
   { href: "/blog", label: "The Studio" },
-  { href: "/quiz", label: "Quiz" }
+  { href: "/about", label: "About" },
+  { href: "/quiz", label: "Collection Finder" }
 ];
 
 const legalLinks = [
@@ -27,13 +34,15 @@ export function Footer() {
             <Link href="/" className="inline-flex items-center" aria-label="ColorPagePrints home">
               <Image src="/images/logo-primary.png" alt="ColorPagePrints" width={3000} height={600} className="h-6 w-auto md:h-8" />
             </Link>
-            <p className="text-sm text-text-muted">Premium coloring books and printable pages.</p>
+            <p className="text-sm leading-6 text-text-muted">
+              Coloring experiences for different moods and moments, starting with Colors of Calm and the launch shelf.
+            </p>
           </div>
 
           <div>
-            <p className="mb-3 font-body text-sm font-semibold text-text">Shop</p>
+            <p className="mb-3 font-body text-sm font-semibold text-text">Explore</p>
             <ul className="space-y-2 text-sm text-text-muted">
-              {shopLinks.map((link) => (
+              {exploreLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="hover:text-text">
                     {link.label}
@@ -44,9 +53,9 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="mb-3 font-body text-sm font-semibold text-text">Content</p>
+            <p className="mb-3 font-body text-sm font-semibold text-text">Collections</p>
             <ul className="space-y-2 text-sm text-text-muted">
-              {contentLinks.map((link) => (
+              {collectionLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="hover:text-text">
                     {link.label}
@@ -57,18 +66,22 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="mb-3 font-body text-sm font-semibold text-text">Social</p>
-            <div className="flex items-center gap-2 text-xs text-text-muted">
-              <span className="rounded border border-border px-2 py-1">IG</span>
-              <span className="rounded border border-border px-2 py-1">TT</span>
-              <span className="rounded border border-border px-2 py-1">YT</span>
-            </div>
+            <p className="mb-3 font-body text-sm font-semibold text-text">Studio</p>
+            <ul className="space-y-2 text-sm text-text-muted">
+              {studioLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="hover:text-text">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         <div className="flex flex-col gap-3 border-t border-border pt-6 text-sm text-text-muted md:flex-row md:items-center md:justify-between">
           <p>© 2026 ColorPagePrints LLC</p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             {legalLinks.map((link) => (
               <Link key={link.href} href={link.href} className="hover:text-text">
                 {link.label}

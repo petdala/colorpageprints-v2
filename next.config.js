@@ -19,8 +19,6 @@ const nextConfig = {
       { source: '/categories/holidays/', destination: '/coloring-pages/holidays/', permanent: true },
       { source: '/categories/mandalas/', destination: '/coloring-pages/mandalas/', permanent: true },
       { source: '/categories/education/', destination: '/coloring-pages/educational/', permanent: true },
-      { source: '/colors-of-calm/', destination: '/ritual/cozy-girl-self-care/', permanent: true },
-      { source: '/colors-of-calm', destination: '/ritual/cozy-girl-self-care/', permanent: true },
       { source: '/moss-loop-custom/', destination: '/custom/', permanent: true },
       { source: '/moss-loop-custom', destination: '/custom/', permanent: true }
     ];

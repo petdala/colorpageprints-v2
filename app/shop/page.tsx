@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { getBooks } from "@/lib/data";
+import { getFlagshipBook, getLaunchShelfBooks } from "@/lib/data";
 import { ShopPageClient } from "./ShopPageClient";
 
 export const metadata: Metadata = {
-  title: "Shop Coloring Books | Kids & Adults"
+  title: {
+    absolute: "Shop ColorPagePrints | Launch Shelf & Upcoming Coloring Books"
+  },
+  description:
+    "Preview Colors of Calm, save future coloring book ideas, and get launch reminders for upcoming ColorPagePrints collections."
 };
 
 export default function ShopPage() {
-  const books = getBooks();
+  const books = getLaunchShelfBooks();
+  const flagshipBook = getFlagshipBook() ?? null;
 
   const collectionSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "ColorPagePrints Shop",
-    description: "Premium coloring books for every age and interest.",
+    name: "ColorPagePrints Launch Shelf",
+    description: "Preview Colors of Calm, save future coloring book ideas, and get launch reminders for upcoming ColorPagePrints collections.",
     mainEntity: {
       "@type": "ItemList",
       itemListElement: books.map((book, index) => ({
@@ -28,19 +31,9 @@ export default function ShopPage() {
   };
 
   return (
-    <div className="space-y-8">
-      <header className="space-y-3">
-        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Shop", href: "/shop" }]} />
-        <h1 className="font-heading text-3xl text-text">Our Books</h1>
-        <p className="text-lg text-text-muted">Premium coloring books for every age and interest.</p>
-        <div className="relative h-56 overflow-hidden rounded-2xl bg-surface-alt md:h-72">
-          <Image src="/images/heroes/shop-hero.png" alt="A curated still life of coloring books, pencils, and cozy studio details." fill priority className="object-cover" />
-        </div>
-      </header>
-
-      <ShopPageClient books={books} />
-
+    <>
+      <ShopPageClient books={books} flagshipBook={flagshipBook} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
-    </div>
+    </>
   );
 }

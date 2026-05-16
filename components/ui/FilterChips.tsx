@@ -6,12 +6,18 @@ type FilterChipsProps = {
   options: string[];
   activeOption: string;
   onSelect: (option: string) => void;
+  align?: "left" | "center";
 };
 
-export function FilterChips({ options, activeOption, onSelect }: FilterChipsProps) {
+export function FilterChips({ options, activeOption, onSelect, align = "left" }: FilterChipsProps) {
   return (
     <div className="relative">
-      <div className="flex gap-2 overflow-x-auto pb-2 pr-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div
+        className={cn(
+          "flex gap-2 overflow-x-auto pb-2 pr-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+          align === "center" ? "md:flex-wrap md:justify-center md:overflow-visible md:pr-0" : ""
+        )}
+      >
         {options.map((option) => {
           const isActive = option === activeOption;
 

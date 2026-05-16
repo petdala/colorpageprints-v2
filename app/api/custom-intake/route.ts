@@ -33,9 +33,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // TODO: Send this as an email to hello@colorpageprints.com via SendGrid/Resend/etc.
-    console.log("Custom intake submission", payload);
-
     return NextResponse.json(
       { success: true, message: "We'll be in touch within 2 business days." },
       { status: 200, headers: { "Content-Type": "application/json" } }

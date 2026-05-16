@@ -4,6 +4,24 @@ export type AmazonReview = {
   author: string;
 };
 
+export type BookStatus =
+  | "idea"
+  | "collecting_interest"
+  | "in_production"
+  | "sampler_available"
+  | "launch_list_open"
+  | "preorder_soon"
+  | "preorder_open"
+  | "available";
+
+export type InterestType =
+  | "global_launch_list"
+  | "sampler_request"
+  | "book_interest"
+  | "preorder_reminder"
+  | "theme_vote"
+  | "audio_preview_interest";
+
 export type Book = {
   sku: string;
   title: string;
@@ -11,23 +29,39 @@ export type Book = {
   slug: string;
   series: string;
   series_slug: string;
-  price: number;
-  page_count: number;
+  price?: number | null;
+  page_count?: number | null;
   age_range: string;
   lane: string;
   template: string;
-  amazon_asin: string;
-  cover_image: string;
+  amazon_asin?: string | null;
+  cover_image?: string | null;
   interior_previews: string[];
   free_sample_slugs: string[];
   amazon_reviews: AmazonReview[];
   description: string;
   keywords: string[];
   related_skus: string[];
-  launch_date: string;
+  launch_date?: string | null;
   priority: number;
   has_ritual_bundle: boolean;
-  ritual_bundle_slug: string | null;
+  ritual_bundle_slug?: string | null;
+  status?: BookStatus;
+  is_flagship?: boolean;
+  purchase_url?: string | null;
+  preorder_url?: string | null;
+  sampler_url?: string | null;
+  launch_list_url?: string | null;
+  interest_count?: number | null;
+  interest_cta_label?: string | null;
+  launch_window?: string | null;
+  confirmed_release_date?: string | null;
+  pipeline_stage_label?: string | null;
+  pipeline_stage_description?: string | null;
+  cover_status?: "final" | "draft" | "placeholder";
+  show_price?: boolean;
+  audience?: string;
+  theme_tags?: string[];
 };
 
 export type FAQItem = {

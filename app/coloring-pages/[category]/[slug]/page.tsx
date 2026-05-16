@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/button";
+import { getBookPrimaryCtaHref, getBookPrimaryCtaLabel, getBookStatus, hasRealAmazonAsin } from "@/lib/storefront";
 import { getBookBySku, getColoringPages } from "@/lib/data";
 import { DownloadGate } from "./DownloadGate";
 
@@ -22,7 +23,8 @@ export function generateStaticParams() {
 }
 
 function findColoringPage(category: string, slug: string) {
-  return getColoringPages().find((page) => page.category === category && page.slug === slug);
+  const pages = getColoringPages();
+  return pages.find((page) => page.category === category && page.slug === slug) ?? pages.find((page) => page.slug === slug);
 }
 
 export function generateMetadata({ params }: ColoringPageDetailProps): Metadata {
@@ -55,8 +57,12 @@ export default function ColoringPageDetail({ params }: ColoringPageDetailProps) 
     .filter((candidate) => candidate.slug !== page.slug)
     .slice(0, 6);
 
-  const parentAsin = parentBook?.amazon_asin === "TBD" ? "B000000000" : parentBook?.amazon_asin;
-  const parentBookUrl = parentAsin ? `https://amazon.com/dp/${parentAsin}?tag=colorpageprints-20` : "/shop";
+  const parentBookHref = parentBook ? getBookPrimaryCtaHref(parentBook) : "/shop";
+  const parentBookLabel = parentBook
+    ? getBookStatus(parentBook) === "available" && !parentBook.purchase_url && hasRealAmazonAsin(parentBook)
+      ? "Buy on Amazon"
+      : getBookPrimaryCtaLabel(parentBook)
+    : "Explore the Launch Shelf";
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -76,7 +82,7 @@ export default function ColoringPageDetail({ params }: ColoringPageDetailProps) 
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },
-          { label: "Free Pages", href: "/coloring-pages" },
+          { label: "Free Library", href: "/coloring-pages" },
           { label: page.category.charAt(0).toUpperCase() + page.category.slice(1), href: `/coloring-pages?category=${page.category}` },
           { label: page.title, href: `/coloring-pages/${page.category}/${page.slug}` }
         ]}
@@ -84,7 +90,7 @@ export default function ColoringPageDetail({ params }: ColoringPageDetailProps) 
 
       <section className="space-y-5">
         <div className="relative mx-auto aspect-square w-full max-w-[600px] overflow-hidden rounded-xl bg-surface-alt shadow-sm">
-          <Image src={page.preview_image} alt={page.alt_text} fill className="object-cover" />
+          <Image src={page.preview_image} alt={page.alt_text} fill className="object-contain p-6" />
         </div>
 
         <div className="flex flex-wrap items-center gap-3 rounded-xl border border-border bg-card p-4">
@@ -104,15 +110,25 @@ export default function ColoringPageDetail({ params }: ColoringPageDetailProps) 
         <DownloadGate slug={page.slug} pdfDownloadUrl={page.pdf_download_url} />
       </section>
 
+      <section className="rounded-[28px] border border-border bg-surface-alt p-6">
+        <h2 className="font-heading text-2xl text-text">Want a more guided reset?</h2>
+        <p className="mt-2 text-sm leading-7 text-text-muted">
+          Try the Colors of Calm sampler — mindful mandalas, companion audio, and a slower coloring ritual.
+        </p>
+        <div className="mt-4">
+          <Button href="/launch-list?interest=colors-of-calm&type=sampler_request">Get the Free Sampler</Button>
+        </div>
+      </section>
+
       {parentBook ? (
         <section className="rounded-lg bg-surface-alt p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             <div className="relative h-24 w-16 shrink-0 overflow-hidden rounded-md bg-card">
-              <Image src={parentBook.cover_image} alt={parentBook.title} fill className="object-cover" />
+              <Image src={parentBook.cover_image ?? "/images/covers/ritual-placeholder.jpg"} alt={parentBook.title} fill className="object-cover" />
             </div>
             <div className="space-y-2">
               <p className="font-heading text-xl text-text">This page is from {parentBook.title}</p>
-              <Button href={parentBookUrl}>Get the full {parentBook.page_count}-page book →</Button>
+              <Button href={parentBookHref}>{parentBookLabel}</Button>
             </div>
           </div>
         </section>
