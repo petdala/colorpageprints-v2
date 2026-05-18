@@ -313,6 +313,19 @@ export default function BookDetailPage({ params }: BookDetailPageProps) {
             ))}
           </section>
 
+          <section className="grid gap-8 overflow-hidden rounded-[32px] border border-border bg-card p-6 shadow-sm md:p-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-[300px] overflow-hidden rounded-[26px] border border-border bg-surface-alt">
+              <Image src="/images/covers/colors-of-calm-back-cover.png" alt="Colors of Calm back cover preview" fill className="object-contain p-3" />
+            </div>
+            <div className="space-y-4">
+              <p className="text-xs uppercase tracking-[0.24em] text-text-muted">Back cover preview</p>
+              <h2 className="font-heading text-3xl text-text">A complete reset experience, not just a cover</h2>
+              <p className="max-w-2xl text-sm leading-7 text-text-muted">
+                This preview shows how the flagship collection will explain the ritual: 50 mandalas, a guided phase arc, and companion audio positioned as one calm product experience.
+              </p>
+            </div>
+          </section>
+
           <section className="space-y-5 rounded-[32px] border border-border bg-surface-alt p-8">
             <h2 className="font-heading text-3xl text-text">Five guided phases</h2>
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">

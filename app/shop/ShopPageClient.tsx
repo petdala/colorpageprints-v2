@@ -92,7 +92,9 @@ export function ShopPageClient({ books, flagshipBook }: ShopPageClientProps) {
             <p className="text-sm text-text-light">Flagship sampler · launch reminders · future collection votes</p>
           </div>
 
-          <div className="relative min-h-[430px] rounded-[32px] border border-border bg-card p-5 shadow-sm">
+          <div className="relative min-h-[430px] overflow-hidden rounded-[32px] border border-border bg-card p-5 shadow-sm">
+            <Image src="/images/heroes/shop-hero.png" alt="Warm launch shelf workspace with coloring pages" fill priority className="object-cover opacity-20" />
+            <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,253,248,0.78),rgba(255,247,239,0.86))]" />
             <div className="absolute right-8 top-8 h-24 w-24 rounded-full bg-cta/15" />
             <div className="absolute bottom-12 left-8 h-32 w-32 rounded-full bg-[#9cad87]/20" />
             <div className="relative mx-auto flex h-full max-w-[360px] items-center justify-center py-8">

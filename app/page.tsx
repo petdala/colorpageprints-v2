@@ -223,6 +223,24 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-background px-6 py-12 md:px-10 lg:px-12 xl:px-16">
+        <div className="grid overflow-hidden rounded-[32px] border border-border bg-card shadow-sm lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="space-y-4 p-8 md:p-10">
+            <p className="text-xs uppercase tracking-[0.24em] text-text-muted">Behind the ritual</p>
+            <h2 className="font-heading text-4xl leading-tight text-text md:text-5xl">A slower workspace for a calmer book</h2>
+            <p className="max-w-xl text-sm leading-7 text-text-muted">
+              The Colors of Calm launch is built around quiet product signals: printable pages, a premium book feel, and companion audio that supports the full reset arc.
+            </p>
+            <Button href="/colors-of-calm" variant="secondary">
+              Explore Colors of Calm
+            </Button>
+          </div>
+          <div className="relative min-h-[300px] border-t border-border lg:border-l lg:border-t-0">
+            <Image src="/images/heroes/homepage-hero.png" alt="Colors of Calm workspace with coloring pages and art tools" fill className="object-cover" />
+          </div>
+        </div>
+      </section>
+
       <section className="rounded-t-[36px] bg-[linear-gradient(115deg,#fff6f0,#f7f1ea)] px-6 py-20 text-center md:px-10 lg:px-12 xl:px-16">
         <h2 className="font-heading text-5xl text-text md:text-6xl">Find your ritual</h2>
         <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-text-muted">
