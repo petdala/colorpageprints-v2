@@ -70,7 +70,7 @@ export function ShopPageClient({ books, flagshipBook }: ShopPageClientProps) {
   );
 
   const hasActiveFilters = audienceFilter !== "All" || statusFilter !== "All";
-  const flagshipVisual = flagshipBook?.cover_image ?? "/images/covers/colors-of-calm-temp.svg";
+  const flagshipVisual = flagshipBook?.cover_image ?? "/images/covers/colors-of-calm-temp.png";
 
   return (
     <div className="space-y-16">

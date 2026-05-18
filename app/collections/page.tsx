@@ -63,7 +63,7 @@ export default function CollectionsPage() {
           <div className="absolute left-8 top-8 h-24 w-24 rounded-full bg-[#9cad87]/20" />
           <div className="absolute bottom-8 right-8 h-20 w-20 rounded-full bg-cta/15" />
           <div className="relative mx-auto h-[280px] max-w-[220px]">
-            <Image src="/images/covers/colors-of-calm-temp.svg" alt="Colors of Calm collection preview" fill className="object-contain" />
+            <Image src="/images/covers/colors-of-calm-temp.png" alt="Colors of Calm collection preview" fill className="object-contain" />
           </div>
         </div>
       </header>

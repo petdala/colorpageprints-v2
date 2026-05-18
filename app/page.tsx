@@ -122,7 +122,7 @@ function ProductMockup({ coverImage }: { coverImage: string }) {
 
 export default function HomePage() {
   const flagshipBook = getFlagshipBook();
-  const flagshipVisual = flagshipBook?.cover_image ?? "/images/covers/colors-of-calm-temp.svg";
+  const flagshipVisual = flagshipBook?.cover_image ?? "/images/covers/colors-of-calm-temp.png";
 
   return (
     <div className="-mx-4 space-y-0 overflow-hidden sm:-mx-6 lg:-mx-8">

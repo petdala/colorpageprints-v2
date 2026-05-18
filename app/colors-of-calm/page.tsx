@@ -36,7 +36,7 @@ export default function ColorsOfCalmPage() {
     notFound();
   }
 
-  const coverImage = book.cover_image ?? "/images/covers/colors-of-calm-temp.svg";
+  const coverImage = book.cover_image ?? "/images/covers/colors-of-calm-temp.png";
 
   return (
     <div className="space-y-16 pb-8">
