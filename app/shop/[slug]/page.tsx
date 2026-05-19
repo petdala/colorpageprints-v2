@@ -301,37 +301,72 @@ export default function BookDetailPage({ params }: BookDetailPageProps) {
         <>
           <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {[
-              ["What’s inside", "50 mindful mandalas and a flagship adult reset rhythm."],
+              ["50 mindful mandalas", "A full adult reset arc organized around calmer coloring sessions."],
               ["Five guided phases", "Arrive, Steady, Deepen, Release, and Return."],
-              ["Companion audio", "Built to pair the visual ritual with a calmer listening layer."],
-              ["Launch shelf first", "Sampler requests and reminders open before the full release."]
+              ["Companion audio", "A listening layer designed to move with the same phase rhythm."],
+              ["Sampler first", "Try the experience before the full collection release." ]
             ].map(([title, body]) => (
               <article key={title} className="rounded-[24px] border border-border bg-card p-5 shadow-sm">
-                <h2 className="font-heading text-2xl text-text">{title}</h2>
+                <p className="text-xs uppercase tracking-[0.18em] text-text-light">Colors of Calm</p>
+                <h2 className="mt-3 font-heading text-2xl text-text">{title}</h2>
                 <p className="mt-2 text-sm leading-6 text-text-muted">{body}</p>
               </article>
             ))}
+          </section>
+
+          <section className="overflow-hidden rounded-[34px] border border-border bg-[linear-gradient(135deg,#fffdf8,#fff3eb)] shadow-sm">
+            <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+              <div className="space-y-5 p-8 md:p-10">
+                <p className="text-xs uppercase tracking-[0.24em] text-cta">A+ Product Story</p>
+                <h2 className="font-heading text-4xl leading-tight text-text md:text-5xl">A calmer coloring book built like a ritual</h2>
+                <p className="max-w-2xl text-sm leading-7 text-text-muted">
+                  Colors of Calm is not positioned as a random stack of mandalas. It is shaped as a five-part reset: a softer entry point, a steady rhythm, deeper focus, release, and a clear return to the day.
+                </p>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {["Low-friction start", "Adult reset focus", "Audio-ready flow"].map((item) => (
+                    <div key={item} className="rounded-[18px] border border-border bg-card/80 p-4 text-sm font-medium text-text">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="relative min-h-[420px] border-t border-border bg-card lg:border-l lg:border-t-0">
+                <Image src="/images/heroes/homepage-hero.png" alt="Colors of Calm pages and art tools arranged on a calm workspace" fill className="object-cover" />
+                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,253,248,0.1),rgba(255,253,248,0.48))]" />
+              </div>
+            </div>
           </section>
 
           <section className="grid gap-8 overflow-hidden rounded-[32px] border border-border bg-card p-6 shadow-sm md:p-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
             <div className="relative mx-auto aspect-[3/4] w-full max-w-[300px] overflow-hidden rounded-[26px] border border-border bg-surface-alt">
               <Image src="/images/covers/colors-of-calm-back-cover.png" alt="Colors of Calm back cover preview" fill className="object-contain p-3" />
             </div>
-            <div className="space-y-4">
+            <div className="space-y-5">
               <p className="text-xs uppercase tracking-[0.24em] text-text-muted">Back cover preview</p>
-              <h2 className="font-heading text-3xl text-text">A complete reset experience, not just a cover</h2>
+              <h2 className="font-heading text-3xl leading-tight text-text md:text-4xl">What the full ritual is designed to hold</h2>
               <p className="max-w-2xl text-sm leading-7 text-text-muted">
-                This preview shows how the flagship collection will explain the ritual: 50 mandalas, a guided phase arc, and companion audio positioned as one calm product experience.
+                The back-cover direction explains the product clearly: 50 mandalas across guided phases, companion audio cues, and a calmer adult reset promise without making medical or therapeutic claims.
               </p>
+              <div className="flex flex-wrap gap-2">
+                <Badge>50 mandalas</Badge>
+                <Badge>Guided phases</Badge>
+                <Badge>Audio preview planned</Badge>
+              </div>
             </div>
           </section>
 
-          <section className="space-y-5 rounded-[32px] border border-border bg-surface-alt p-8">
-            <h2 className="font-heading text-3xl text-text">Five guided phases</h2>
+          <section className="space-y-6 rounded-[32px] border border-border bg-surface-alt p-8">
+            <div className="max-w-3xl space-y-3">
+              <p className="text-xs uppercase tracking-[0.24em] text-text-muted">Inside the experience</p>
+              <h2 className="font-heading text-3xl text-text md:text-4xl">Five phases for one slower rhythm</h2>
+              <p className="text-sm leading-7 text-text-muted">
+                Each phase gives the session a different job, so the book feels paced instead of repetitive.
+              </p>
+            </div>
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-              {guidedPhases.map((phase) => (
+              {guidedPhases.map((phase, index) => (
                 <article key={phase.title} className="rounded-[24px] border border-border bg-card p-5 shadow-sm">
-                  <p className="text-xs uppercase tracking-[0.18em] text-text-light">Phase</p>
+                  <p className="text-xs uppercase tracking-[0.18em] text-text-light">Phase {index + 1}</p>
                   <h3 className="mt-3 font-heading text-2xl text-text">{phase.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-text-muted">{phase.body}</p>
                 </article>
@@ -339,15 +374,17 @@ export default function BookDetailPage({ params }: BookDetailPageProps) {
             </div>
           </section>
 
-          <section className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+          <section className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-stretch">
             <article className="rounded-[32px] border border-border bg-card p-8 shadow-sm">
-              <h2 className="font-heading text-3xl text-text">Companion audio</h2>
+              <p className="text-xs uppercase tracking-[0.24em] text-text-muted">Companion audio</p>
+              <h2 className="mt-3 font-heading text-3xl text-text">Designed to be colored with sound</h2>
               <p className="mt-3 text-sm leading-7 text-text-muted">
-                Colors of Calm is designed with companion audio that follows the same five-phase arc. The listening layer is part of the flagship vision rather than an afterthought.
+                Colors of Calm is being built with companion audio that follows the same five-phase arc. The audio is not available as a fake promise here; previews will only be sent when they are ready in the launch flow.
               </p>
-              <p className="mt-4 text-sm leading-7 text-text-muted">
-                Audio preview delivery is staged through the launch flow so you only see it when the files and release notes are ready.
-              </p>
+              <div className="mt-6 rounded-[24px] border border-border bg-surface-alt p-5">
+                <p className="text-xs uppercase tracking-[0.18em] text-text-light">Audio path</p>
+                <p className="mt-2 text-sm leading-7 text-text-muted">Arrive with softer cues, steady into rhythm, deepen focus, release pressure, and return with a cleaner close.</p>
+              </div>
             </article>
 
             <LaunchInterestForm
@@ -360,6 +397,19 @@ export default function BookDetailPage({ params }: BookDetailPageProps) {
               showThemePreference
               showRequestField
             />
+          </section>
+
+          <section className="grid gap-6 md:grid-cols-3">
+            {[
+              ["What you can do now", "Request the sampler and join the launch list. No purchase is implied until a real release path exists."],
+              ["What is still coming", "Full release timing, audio delivery details, and final product logistics will be confirmed before any preorder language appears."],
+              ["What this is not", "It is not therapy and does not make medical claims. It is a creative coloring ritual for calm, focus, and reset." ]
+            ].map(([title, body]) => (
+              <article key={title} className="rounded-[28px] border border-border bg-card p-6 shadow-sm">
+                <h2 className="font-heading text-2xl text-text">{title}</h2>
+                <p className="mt-3 text-sm leading-7 text-text-muted">{body}</p>
+              </article>
+            ))}
           </section>
 
           <section className="rounded-[32px] border border-border bg-card p-8 shadow-sm">
